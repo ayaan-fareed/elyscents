@@ -160,7 +160,7 @@ const Nav = () => {
           sx: {
             backgroundColor: '#fff',
             color: '#000',
-            width: 450,
+            width: 350,
           }
         }}>
 
