@@ -125,7 +125,10 @@ const Best_seller = () => {
 
     return (
         <>
-        
+            <div className={style.deals_sec}>
+                <h2 className={style.heading_txt}>BEST SELLERS PERFUMES</h2>
+            </div>
+
             <div className={style.cart_sec_main}>
                 {!isMobile ? (
                     <div className={style.crazydeal_parnt}>
