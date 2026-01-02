@@ -1,0 +1,100 @@
+.outlets_cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    padding: 0 20px;
+
+    .main_heading h2 {
+        color: black;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .outlets_parnt {
+        display: flex;
+        justify-content: center;
+        gap: 70px;
+        margin-top: 90px;
+        flex-wrap: wrap;
+    }
+
+    .mega_outlet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+        row-gap: 10px;
+        flex: 0 1 auto;
+        max-width: 400px;
+    }
+
+    .shop_icon svg {
+        font-size: 55px;
+        margin-bottom: 7px;
+    }
+
+    .outlet_name h2 {
+        font-size: 21.5px;
+    }
+
+    .shop_address p {
+        width: 100%; 
+        max-width: 400px;
+        text-align: center;
+        letter-spacing: 2px;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+
+    @media (max-width: 1024px) {
+        .outlets_parnt {
+            gap: 80px;
+            padding: 10px;
+        }
+    }
+
+
+@media (max-width: 768px) {
+    .outlets_cont {
+        margin-top: 20px;
+        padding: 0 15px; 
+
+        .main_heading h2 {
+            font-size: 24px;
+        }
+
+        .outlets_parnt {
+            margin-top: 30px;
+            gap: 40px; 
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mega_outlet {
+            flex: none; 
+            width: 100%;
+            row-gap: 5px; 
+            margin-bottom: 0;
+        }
+
+        .shop_address p {
+            width: 100%;
+            max-width: 320px; 
+            font-size: 14px;
+            letter-spacing: 1px;
+           
+        }
+
+        .shop_icon svg {
+            font-size: 40px;
+            margin-bottom: 0px;
+        }
+    }
+}
+}

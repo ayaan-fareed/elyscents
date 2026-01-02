@@ -1,0 +1,269 @@
+.cart_sec_main {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  gap: 75px;
+  flex-wrap: wrap;
+}
+
+.crazydeal_parnt {
+  display: flex;
+  flex-wrap: wrap; 
+  width: 100%;
+  justify-content: center;
+  gap: 20px; 
+  row-gap: 40px;
+}
+
+.crazydea2_parnt {
+  display: flex;
+  gap: 25px;
+  width: 100%;
+  justify-content: center;
+}
+
+.deals_sec {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  margin: 30px 0px 50px 0px;
+}
+
+.heading_txt {
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+}
+
+.view_btn {
+  button {
+    background-color: black;
+    color: white;
+    padding: 10px 25px 10px 25px;
+    cursor: pointer;
+    transition: 300ms;
+    font-weight: bold;
+    letter-spacing: 3px;
+  }
+
+  button:hover {
+    background-color: #141515;
+  }
+}
+
+.carts_prnt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 22.5%;
+  cursor: pointer;
+
+  .cart_image {
+    position: relative;
+    width: 100%;
+    
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .sale_tag {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #1c1d1d;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: white;
+    font-size: 12px;
+  }
+  .pricing_sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      font-size: 16px;
+      text-align: center;
+      letter-spacing: 1px;
+      padding-top: 18px;
+      color: black;
+      height: 50px;
+      line-height: 20px;
+    }
+  }
+
+  .rs_sec {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .span1_prnt {
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .orignal_price {
+    font-size: 16px;
+    text-decoration: line-through;
+    color: #474747;
+  }
+
+  .aftrsale_price {
+    font-size: 16px;
+    color: #6f6f6f;
+  }
+
+  .saving_price {
+    font-size: 16px;
+    color: #c20000;
+  }
+
+  .cart_btn {
+    background-color: black;
+    padding: 6px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    color: white;
+    border: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart_sec_main {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .crazydeal_parnt {
+    width: 100%;
+    gap: 35px;
+  }
+
+  .carts_prnt {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .cart_image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .addtocart_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cart_btn {
+    width: 90%;
+    box-sizing: border-box;
+  }
+
+  .view_btn {
+    button {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+
+  .rs_sec {
+    gap: 6px;
+  }
+
+  .span1_prnt {
+    gap: 8px;
+    padding: 4px 0;
+  }
+
+  .orignal_price {
+    font-size: 14px;
+  }
+
+  .aftrsale_price {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .saving_price {
+    font-size: 13px;
+  }
+
+  .addtocart_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cart_btn {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+    margin-top: 12px;
+
+  }
+}
+
+@media (max-width: 830px) and (max-width: 769px) {
+
+  .carts_prnt {
+    .pricing_sec {
+      padding: 12px 0;
+
+      h3 {
+        text-align: center;
+        align-items: center;
+        font-size: 11px;
+      }
+    }
+  }
+
+  .crazydeal_parnt {
+    flex-wrap: wrap;
+  }
+  .carts_prnt {
+    width: 21%;
+    h3 {
+      font-size: 9px;
+    }
+  }
+
+  .cart_btn {
+    max-width: 230px;
+    width: 100%;
+  }
+}
+
+.crazydeal_parnt {
+  display: flex;
+  flex-wrap: wrap; 
+  width: 100%;
+  justify-content: center;
+  gap: 20px; 
+  row-gap: 40px;
+}
+
+.carts_prnt {
+  width: 21%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media(max-width:768){
+  .carts_prnt{
+    width:100%;
+  }
+}
+
+

@@ -1,0 +1,130 @@
+.cus_says_parnt {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: #fff;
+    color: #000;
+}
+
+.mn_txt {
+    text-align: center;
+    margin-bottom: 40px;
+    h2 {
+        font-size: clamp(20px, 5vw, 26px);
+        font-weight: 600;
+        margin-bottom: 14px;
+        letter-spacing: 1px;
+    }
+}
+
+.rating_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    .ratings {
+        display: flex;
+        gap: 4px;
+        svg { color: #000; font-size: 16px; }
+    }
+    p { font-size: 14px; margin: 0; font-weight: 600; }
+}
+
+.swiper_container_wrapper {
+    max-width: 900px; 
+    margin: 0 auto;
+    position: relative;
+    padding: 0 10px;
+}
+
+.mySwiper {
+    padding-bottom: 20px;
+    :global(.swiper-wrapper) {
+        display: flex;
+        align-items: stretch; 
+    }
+}
+
+.custom_slide {
+    display: flex;
+    justify-content: center; 
+}
+
+.reviwes {
+    width: 100%;
+    max-width: 800px; 
+    padding: 60px 40px;
+    border: 1.5px solid #0b8f7a;
+    border-radius: 12px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    min-height: 380px; 
+
+    @media (max-width: 600px) {
+        padding: 40px 20px;
+        min-height: 320px;
+    }
+}
+
+.faq_right {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.review_text {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    p {
+        font-size: clamp(16px, 4vw, 22px);
+        font-weight: 500;
+        line-height: 1.6;
+        color: #111;
+    }
+}
+
+.cus_names {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 12px;
+    svg { font-size: 18px; color: #0b8f7a; }
+}
+
+.customer_name {
+    p { font-size: 17px; font-weight: 700; margin-bottom: 5px; }
+    .product_link {
+        font-size: 13px;
+        color: #444;
+        text-decoration: underline;
+        opacity: 0.9;
+    }
+}
+
+
+.navigation_wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 50px; 
+    margin-top: 30px;
+}
+
+.swiper_button_prev, .swiper_button_next {
+    cursor: pointer;
+    font-size: 26px;
+    color: #000;
+    transition: transform 0.2s ease;
+    
+}
+
+@media (max-width: 768px) {
+    .navigation_wrapper { gap: 80px; }
+}

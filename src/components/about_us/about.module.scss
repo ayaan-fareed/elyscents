@@ -1,0 +1,256 @@
+.main_txt {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+    h2 {
+        color: black;
+        font-size: 30px;
+        letter-spacing: 1.5px;
+        font-weight: bold;
+
+    }
+}
+
+.address_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 5%;
+
+    p {
+        color: black;
+        font-size: 23px;
+        letter-spacing: 1.5px;
+        text-align: center;
+    }
+}
+
+.sendamessage_container {
+    display: flex;
+    flex-direction: column;
+    max-width: 930px;
+    margin: 0 auto;
+    margin-top: 5%;
+
+    h2 {
+        color: black;
+        font-size: 24px;
+        font-weight: bold;
+        width: 460px;
+        text-align: center;
+    }
+
+    .sub_heading {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cus_info_sec {
+        display: flex;
+        flex-direction: column;
+        margin-top: 5%;
+        gap: 10px;
+
+
+        .enter_name {
+            display: flex;
+            text-align: left;
+            flex-direction: column;
+            color: rgb(74, 74, 74);
+            gap: 10px;
+            letter-spacing: 2px;
+
+            input {
+                border: 1px solid rgb(223, 222, 222);
+                width: 455px;
+                height: 43px;
+
+            }
+        }
+    }
+
+    .cus_info_sec {
+        display: flex;
+        gap: 20px;
+
+        .cus_detail {
+            display: flex;
+            gap: 20px;
+        }
+    }
+
+    .text_area_sec {
+        border: 1px solid rgb(223, 222, 222);
+        width: 100%;
+    }
+
+    .lable_tag {
+        color: rgb(74, 74, 74);
+        letter-spacing: 2px;
+    }
+
+}
+
+.send_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+    gap: 32px;
+
+    button {
+        background-color: black;
+        color: white;
+        padding: 13px;
+        width: 125px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        transition: 300ms;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #141515;
+    }
+
+    p {
+        color: #141515;
+        letter-spacing: 2px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .main_txt {
+        padding: 15px;
+
+        h2 {
+            font-size: 22px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+    }
+
+    .address_container {
+        margin-top: 10%;
+        padding: 0 15px;
+
+        p {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+    }
+
+    .sendamessage_container {
+        padding: 0 15px;
+        margin-top: 10%;
+
+        h2 {
+            width: 100%;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .cus_info_sec {
+            margin-top: 8%;
+            gap: 15px;
+
+            .cus_detail {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .enter_name {
+                input {
+                    width: 100%;
+                }
+            }
+        }
+
+        .text_area_sec {
+            width: 100%;
+        }
+    }
+
+    .send_container {
+        margin-top: 8%;
+        gap: 25px;
+
+        button {
+            width: 100%;
+            max-width: 200px;
+        }
+
+        p {
+            font-size: 14px;
+            text-align: center;
+            padding: 10px;
+        }
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+    .sendamessage_container {
+        padding: 0 25px;
+
+        h2 {
+            width: 100%;
+            font-size: 20px;
+        }
+    }
+
+    .cus_info_sec {
+        max-width: 455px;
+        margin: 0 auto;
+
+        .cus_detail {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .enter_name {
+            input {
+                width: 100%;
+            }
+        }
+    }
+
+    .text_area_sec {
+        max-width: 455px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .lable_tag {
+        max-width: 455px;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+
+
+@media (max-width: 1024px) {
+
+    .sendamessage_container {
+        padding: 0 30px;
+
+        h2 {
+            width: 100%;
+            font-size: 20px;
+        }
+
+        .enter_name {
+            input {
+                width: 100%;
+            }
+        }
+    }
+}

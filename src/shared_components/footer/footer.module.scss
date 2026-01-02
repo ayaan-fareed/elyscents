@@ -1,0 +1,176 @@
+.footer_prnt {
+    background-color: #E8E8E1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 160px;
+    overflow-x: hidden;
+
+    .footer_container {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        padding: 20px;
+        margin-top: 40px;
+
+        .ft_logo_img {
+            max-width: 138.5px;
+            max-height: 60px;
+        }
+
+        .our_policys ul {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            color: black;
+            font-size: 14px;
+            letter-spacing: 1.5px;
+        }
+
+        .sign_up_sec {
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            h2 {
+                color: black;
+                letter-spacing: 1px;
+            }
+
+            p {
+                color: rgb(30, 30, 30);
+            }
+        }
+
+        .input_bar {
+            color: black;
+            position: relative;
+
+            input {
+                border-bottom: 2px solid black;
+                width: 300px;
+                padding: 5px;
+
+            }
+        }
+
+        .email_icon {
+            position: absolute;
+            top: 1;
+            right: 100;
+
+            svg {
+                font-size: 23px;
+            }
+        }
+
+        .social_icon {
+            display: flex;
+            gap: 13px;
+            font-size: 25px;
+            color: black;
+            margin-top: 10px;
+        }
+
+        .talk_to_us {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            color: rgb(43, 43, 43);
+
+            h3 {
+                color: black;
+            }
+
+            .chat_us {
+                font-weight: bold;
+                color: black;
+            }
+
+            p {
+                width: 340px;
+                font-size: 14px;
+                letter-spacing: 1.5px;
+            }
+        }
+    }
+
+    .copy_right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: rgb(28, 28, 28);
+        font-size: 13px;
+        letter-spacing: 1px;
+        gap: 10px;
+        padding: 10px;
+
+    }
+}
+
+@media (max-width: 1199px) {
+    .footer_container {
+        flex-wrap: wrap;
+        gap: 40px;
+        padding: 60px 40px;
+
+    }
+
+    .talk_to_us p {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .footer_container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 50px;
+        padding: 50px 20px;
+    }
+
+    .ft_image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .our_policys ul {
+        align-items: center;
+    }
+
+    .our_policys li a {
+        font-size: 13px;
+    }
+
+    .sign_up_sec {
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .input_bar input {
+        width: 100%;
+    }
+
+    .email_icon {
+        display: none;
+    }
+
+    .social_icon {
+        justify-content: center;
+    }
+
+    .talk_to_us {
+        align-items: center;
+    }
+
+    .talk_to_us p {
+        width: 100%;
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+}

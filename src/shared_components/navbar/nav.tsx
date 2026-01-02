@@ -1,0 +1,182 @@
+'use client'
+import React from 'react'
+import style from '@/src/shared_components/navbar/nav.module.scss'
+import { CiSearch } from "react-icons/ci";
+import { GoPerson } from "react-icons/go";
+import { IoBagOutline } from "react-icons/io5";
+import { FaBars } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaYoutube, FaTiktok } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
+import Link from 'next/link';
+import { useRouter } from "next/navigation";
+
+import Box from '@mui/material/Box';
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+
+const Nav = () => {
+
+  const [open, setOpen] = React.useState(false);
+  const toggleDrawer = (value:boolean) => { setOpen(value); };
+  const router = useRouter();
+
+  const menuItems = [
+    { text: "HOME", path: "/" },
+    { text: "ALL PERFUMES", path: "/perfumes" },
+    { text: "CRAZY DEALS", path: "/crazy_deals" },
+    { text: "ABOUT US", path: "/about_us" },
+    { text: "CONTACT US", path: "/contact_us" },
+  ];
+
+  const [cartOpen, setCartOpen] = React.useState(false);
+  const toggleCartDrawer = (value:boolean) => {
+    setCartOpen(value);
+  };
+  return (
+    <>
+      <div className={style.shipping}>
+        <p>BUY ANY TWO PERFUMES & GET FREE SHIPPING</p>
+      </div>
+
+      <nav className={style.nav_bar}>
+
+        <div className={style.main_bar}>
+
+          <div
+            className={style.menu_icon}
+            onClick={() => toggleDrawer(true)}>
+            <FaBars />
+          </div>
+
+          <div className={style.nav_left}>
+            <CiSearch />
+          </div>
+
+          <div className={style.nav_center}>
+            <Link href='/'><div className={style.logo_img}></div></Link>
+          </div>
+
+          <div className={style.nav_rght_main}>
+            <div className={style.nav_right_srchbar}>
+              <CiSearch />
+            </div>
+
+            <div className={style.nav_right_person} onClick={() => router.push('/login')}>
+              <GoPerson />
+            </div>
+
+            <div className={style.nav_right} onClick={() => toggleCartDrawer(true)} >
+              <IoBagOutline />
+            </div>
+
+          </div>
+        </div>
+
+        <div>
+          <ul className={style.nav_pages}>
+
+            <li className={style.nav_links}>
+              <Link href="/">HOME</Link>
+            </li>
+
+            <li className={style.nav_links}>
+              <Link href="/perfumes">ALL PERFUMES</Link>
+            </li>
+
+            <li className={style.nav_links}>
+              <Link href="/crazy_deals">CRAZY DEALS</Link>
+            </li>
+
+            <li className={style.nav_links}>
+              <Link href="/about_us">ABOUT US</Link>
+            </li>
+
+            <li className={style.nav_links}>
+              <Link href="/contact_us">CONTACT US</Link>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+
+      <SwipeableDrawer
+        anchor="left"
+        open={open}
+        onClose={() => toggleDrawer(false)}
+        onOpen={() => toggleDrawer(true)}
+        PaperProps={{
+          sx: {
+            backgroundColor: '#fff',
+            color: '#000',
+            width: 320,
+          }
+        }}>
+
+        <div className={style.close_icon}>
+          <IoClose className={style.close_icon_mn}
+            onClick={() => toggleDrawer(false)} />
+        </div>
+
+        {menuItems.map((item) => (
+          <div key={item.text}>
+            <div className={style.drawer_text}
+              onClick={() => {
+                toggleDrawer(false);
+                router.push(item.path);
+              }}>
+              {item.text}
+            </div>
+            <Box sx={{ borderBottom: '1px solid #e5e5e5' }} />
+          </div>
+        ))}
+
+        <div className={style.login_sec}
+          onClick={() => {
+            toggleDrawer(false);
+            router.push("/login");
+          }}>
+          <p>Log in</p>
+        </div>
+
+        <div className={style.social_icon_cont}>
+          {[
+            <FaInstagram />,
+            <FaFacebookF />,
+            <FaYoutube />,
+            <FaTiktok />
+          ].map((icon, i) => (
+            <div className={style.icons_style}>
+              {icon}
+            </div>
+          ))}
+        </div>
+      </SwipeableDrawer>
+
+      <SwipeableDrawer
+        anchor="right"
+        open={cartOpen}
+        onClose={() => toggleCartDrawer(false)}
+        onOpen={() => toggleCartDrawer(true)}
+        PaperProps={{
+          sx: {
+            backgroundColor: '#fff',
+            color: '#000',
+            width: 450,
+          }
+        }}>
+
+        <div className={style.close_icon}>
+          <IoClose
+            className={style.close_icon_mn}
+            onClick={() => toggleCartDrawer(false)}/>
+        </div>
+
+        <div className={style.cart_drawer}>
+          <h2>CART</h2>
+          <p>Your cart is currently empty.</p>
+        </div>
+      </SwipeableDrawer>
+    </>
+  )
+}
+
+export default Nav
