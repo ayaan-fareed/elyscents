@@ -123,6 +123,7 @@ const Best_seller = () => {
         </div>
     )
 
+    
     return (
         <>
             <div className={style.deals_sec}>
