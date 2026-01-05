@@ -12,29 +12,35 @@ import "swiper/css/navigation";
 const Customer_saying = () => {
     const [_, setInit] = useState(false);
 
-    const reviewsData = [
+    const [reviewCart , setReviewCart] = useState([
         {
             id: 1,
             text: "Mash ALLAH Dono Hi Perfume Meri Soch Sa Be Zyda Achy Hai I Like It Thank You Elyscents",
             name: "Masood Akmal",
-            product: "Dark Raven Inspired By Black Opium"
+            product: "Dark Raven Inspired By Black Opium",
+             link: "#",
+            stars: 4,
         },
         {
             id: 2,
             text: "Excellent quality perfumes. Long lasting and premium feel. Highly recommended for everyone!",
             name: "Ali Khan",
-            product: "Royal Oud Collection"
+            product: "Royal Oud Collection",
+             link: "#",
+            stars: 3
         },
         {
             id: 3,
             text: "Very fresh and unique scent. I love your perfumes, ordered three times already!",
             name: "Mohammad Irfan",
-            product: "Summer Breeze Edition"
+            product: "Summer Breeze Edition",
+            link: "#",
+            stars: 5,
         }
-    ];
-
+    ])
     return (
-        <div className={style.cus_says_parnt}>
+        <>
+         <div className={style.cus_says_parnt}>
             <div className={style.mn_txt}>
                 <h2>CUSTOMERS ARE SAYING</h2>
                 <div className={style.rating_main}>
@@ -59,7 +65,7 @@ const Customer_saying = () => {
                     }}
                     onInit={() => setInit(true)}
                     className={style.mySwiper}>
-                    {reviewsData.map((item) => (
+                    {reviewCart.map((item) => (
                         <SwiperSlide key={item.id} className={style.custom_slide}>
                             <div className={style.reviwes}>
                                 <div className={style.faq_right}>
@@ -93,6 +99,9 @@ const Customer_saying = () => {
                 </div>
             </div>
         </div>
+
+        </>
+       
     )
 }
 

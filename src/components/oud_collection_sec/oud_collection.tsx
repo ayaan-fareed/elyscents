@@ -17,7 +17,7 @@ const Oud_collection = () => {
         window.addEventListener('resize', handleResize)
         return () => window.removeEventListener('resize', handleResize)
     }, [])
-    const oud_products = [
+    const [OudProducts , setOudProducts] = useState([
 
         {
             name: 'OUD MAJESTY INSPIRED BY SHAMS',
@@ -80,10 +80,10 @@ const Oud_collection = () => {
         },
 
 
-    ]
-
+    ]);
+        
     const CartItem = (value: any, index: number) => (
-        <div className={style.carts_prnt}>
+        <div className={style.carts_prnt} key={index}>
             <div className={style.cart_image}>
                 <img
                     src={
@@ -130,13 +130,13 @@ const Oud_collection = () => {
             <div className={style.cart_sec_main}>
                 {!isMobile ? (
                     <div className={style.crazydeal_parnt}>
-                        {oud_products.map((value, index) =>
+                        {OudProducts.map((value, index) =>
                             CartItem(value, index)
                         )}
                     </div>
                 ) : (
                     <Swiper slidesPerView={1.2} spaceBetween={15}>
-                        {oud_products.map((value, index) => (
+                        {OudProducts.map((value, index) => (
                             <SwiperSlide key={index}>
                                 {CartItem(value, index)}
                             </SwiperSlide>

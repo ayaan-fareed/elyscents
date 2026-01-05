@@ -5,8 +5,8 @@ import 'swiper/css'
 import style from './for_her_sec.module.scss'
 
 const For_her_sec = () => {
-const[hoverIndex, setHoverIndex] = useState<any>(null)
- const [isMobile, setIsMobile] = useState(false)
+    const [hoverIndex, setHoverIndex] = useState<any>(null)
+    const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
         const handleResize = () => {
@@ -18,11 +18,11 @@ const[hoverIndex, setHoverIndex] = useState<any>(null)
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
-    const forher_products = [
-
+    const [ForHer, setForHer] = useState([
+        
         {
             name: 'ROSE BLOSSOM - INSPIRED BY Gucci',
-            orignal_price:2000,
+            orignal_price: 2000,
             dicounted_price: 1699.00,
             img_src1: 'https://elyscents.pk/cdn/shop/files/rosy_Blossom.jpg?v=1760536616&width=1080',
             img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Rosy-Blossom.jpg?v=1760536616&width=720'
@@ -39,7 +39,7 @@ const[hoverIndex, setHoverIndex] = useState<any>(null)
         {
             name: 'Berry Grace Inspired By Burbury',
             orignal_price: 2000.00,
-            dicounted_price:  1899.00,
+            dicounted_price: 1899.00,
             img_src1: 'https://elyscents.pk/cdn/shop/files/berry_grace.jpg?v=1760522656&width=1080',
             img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Beryy-Grace.jpg?v=1760522656&width=360'
         },
@@ -80,12 +80,10 @@ const[hoverIndex, setHoverIndex] = useState<any>(null)
             img_src1: 'https://elyscents.pk/cdn/shop/files/velina_2323b953-0e39-4cdb-899e-bd1faeb68d9d.jpg?v=1760522545&width=1080',
             img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscent-Velina.jpg?v=1760522545&width=360'
         },
-
-
     ]
-
-      const CartItem = (value: any, index: number) => (
-        <div className={style.carts_prnt}>
+    )
+    const CartItem = (value: any, index: number) => (
+        <div className={style.carts_prnt} key={index}>
             <div className={style.cart_image}>
                 <img
                     src={
@@ -129,27 +127,27 @@ const[hoverIndex, setHoverIndex] = useState<any>(null)
                 <h2 className={style.heading_txt}>PERFUME FOR HER</h2>
             </div>
 
-           <div className={style.cart_sec_main}>
-        {!isMobile ? (
-          <div className={style.crazydeal_parnt}>
-            {forher_products.map((value, index) =>
-              CartItem(value, index)
-            )}
-          </div>
-        ) : (
-          <Swiper slidesPerView={1.2} spaceBetween={15}>
-            {forher_products.map((value, index) => (
-              <SwiperSlide key={index}>
-                {CartItem(value, index)}
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        )}
+            <div className={style.cart_sec_main}>
+                {!isMobile ? (
+                    <div className={style.crazydeal_parnt}>
+                        {ForHer.map((value, index) =>
+                            CartItem(value, index)
+                        )}
+                    </div>
+                ) : (
+                    <Swiper slidesPerView={1.2} spaceBetween={15}>
+                        {ForHer.map((value, index) => (
+                            <SwiperSlide key={index}>
+                                {CartItem(value, index)}
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                )}
 
-        <div className={style.view_btn}>
-          <button>VIEW ALL</button>
-        </div>
-      </div>
+                <div className={style.view_btn}>
+                    <button>VIEW ALL</button>
+                </div>
+            </div>
         </>
     )
 }

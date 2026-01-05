@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { use, useState } from 'react'
 import style from '@/src/components/mn_image/image.module.scss'
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,14 +8,24 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const images = [
-  "https://elyscents.pk/cdn/shop/files/Outlet_banner01.jpg?v=1760516605&width=1920",
-  "https://elyscents.pk/cdn/shop/files/royal_oud_Banner.jpg?v=1760593492&width=1920",
-  "https://elyscents.pk/cdn/shop/files/Salsa_spirit_Banner.jpg?v=1760593491&width=1920",
-  "https://elyscents.pk/cdn/shop/files/zarak_Banner.jpg?v=1760593493&width=1920",
-];
+// {
+//   review: "its bettter then others"
+//   name: "ayaan fareed"
+//   stars: 5,
+// link:"product link"
+  
+// }
 
 const Image = () => {
+  const [images, setImages] = useState([
+    "https://elyscents.pk/cdn/shop/files/Outlet_banner01.jpg?v=1760516605&width=1920",
+    "https://elyscents.pk/cdn/shop/files/royal_oud_Banner.jpg?v=1760593492&width=1920",
+    "https://elyscents.pk/cdn/shop/files/Salsa_spirit_Banner.jpg?v=1760593491&width=1920",
+    "https://elyscents.pk/cdn/shop/files/zarak_Banner.jpg?v=1760593493&width=1920",
+  ]);
+
+
+  console.log(typeof(images))
   return (
     <div className={style.banner_wrapper}>
       <Swiper

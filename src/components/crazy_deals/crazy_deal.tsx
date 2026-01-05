@@ -21,7 +21,7 @@ const Crazy_deal = () => {
   function addtocart(item: any) {
     console.log(item)
   }
-  const crazy_products = [
+  const [CrazyProducts , setCrazyProducts] = useState([
     {
       name: '4X PERFUME BUNDLE',
       orignal_price: 7596.00,
@@ -78,10 +78,10 @@ const Crazy_deal = () => {
       img_src1: 'https://elyscents.pk/cdn/shop/files/testerbox1.jpg?v=1760517576&width=1080',
       img_src2: 'https://elyscents.pk/cdn/shop/files/testerbox2.jpg?v=1760517577&width=360'
     },
-  ]
+  ]) 
 
   const CartItem = (value: any, index: number) => (
-    <div className={style.carts_prnt}>
+    <div className={style.carts_prnt} key={index}>
       <div className={style.cart_image}>
         <img
           src={
@@ -128,13 +128,13 @@ const Crazy_deal = () => {
       <div className={style.cart_sec_main}>
         {!isMobile ? (
           <div className={style.crazydeal_parnt}>
-            {crazy_products.map((value, index) =>
+            {CrazyProducts.map((value, index) =>
               CartItem(value, index)
             )}
           </div>
         ) : (
           <Swiper slidesPerView={1.2} spaceBetween={15}>
-            {crazy_products.map((value, index) => (
+            {CrazyProducts.map((value, index) => (
               <SwiperSlide key={index}>
                 {CartItem(value, index)}
               </SwiperSlide>

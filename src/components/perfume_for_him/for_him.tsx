@@ -17,7 +17,8 @@ const For_him = () => {
         window.addEventListener('resize', handleResize)
         return () => window.removeEventListener('resize', handleResize)
     }, [])
-    const forhim_products = [
+
+    const [ForHim , setForHim] = useState([
 
         {
             name: 'DREAM INPIRED BY JANNAN',
@@ -78,11 +79,10 @@ const For_him = () => {
             img_src1: 'https://elyscents.pk/cdn/shop/files/Peak_Breeze_ebff756b-2f75-4d81-bb82-fb443abad2ea.jpg?v=1760523055&width=1080',
             img_src2: 'https://elyscents.pk/cdn/shop/files/ELyscents-Peak-Breeze.jpg?v=1760523055&width=360'
         },
+    ])
 
-
-    ]
     const CartItem = (value: any, index: number) => (
-        <div className={style.carts_prnt}>
+        <div className={style.carts_prnt} key={index}>
             <div className={style.cart_image}>
                 <img
                     src={
@@ -129,13 +129,13 @@ const For_him = () => {
                   <div className={style.cart_sec_main}>
         {!isMobile ? (
           <div className={style.crazydeal_parnt}>
-            {forhim_products.map((value, index) =>
+            {ForHim.map((value, index) =>
               CartItem(value, index)
             )}
           </div>
         ) : (
           <Swiper slidesPerView={1.2} spaceBetween={15}>
-            {forhim_products.map((value, index) => (
+            {ForHim.map((value, index) => (
               <SwiperSlide key={index}>
                 {CartItem(value, index)}
               </SwiperSlide>

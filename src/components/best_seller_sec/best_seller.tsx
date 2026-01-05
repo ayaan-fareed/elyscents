@@ -17,7 +17,9 @@ const Best_seller = () => {
         window.addEventListener('resize', handleResize)
         return () => window.removeEventListener('resize', handleResize)
     }, [])
-    const products = [
+
+
+    const [products , setProducts] = useState([
 
         {
             name: 'ROYAL OUD',
@@ -81,10 +83,10 @@ const Best_seller = () => {
         },
 
 
-    ]
+    ])
 
     const CartItem = (value: any, index: number) => (
-        <div className={style.carts_prnt}>
+        <div className={style.carts_prnt} key={index}>
             <div className={style.cart_image}>
                 <img
                     src={
