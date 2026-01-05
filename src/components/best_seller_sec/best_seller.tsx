@@ -10,7 +10,7 @@ const Best_seller = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768)
+            setIsMobile(window.innerWidth <= 768) 
         }
 
         handleResize()
@@ -122,7 +122,6 @@ const Best_seller = () => {
             </div>
         </div>
     )
-
     
     return (
         <>
