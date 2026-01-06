@@ -77,6 +77,7 @@ const Crazy_deal = () => {
     ]
     )
   }, [])
+  
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768)
