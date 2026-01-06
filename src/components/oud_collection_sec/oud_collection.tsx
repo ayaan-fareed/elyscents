@@ -4,9 +4,81 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import style from './oud_colllection.module.scss'
 
+type IOudProductsType= {
+    name: string,
+    orignal_price: number,
+    dicounted_price: number,
+    img_src1: string,
+    img_src2: string
+}
+
 const Oud_collection = () => {
     const [hoverIndex, setHoverIndex] = useState<any>(null)
     const [isMobile, setIsMobile] = useState(false)
+    const [OudProducts, setOudProducts] = useState<IOudProductsType[]>([])
+
+    useEffect(() => {
+        setOudProducts([
+            {
+                name: 'OUD MAJESTY INSPIRED BY SHAMS',
+                orignal_price: 2000.00,
+                dicounted_price: 1899.00,
+                img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_majesty.jpg?v=1760523188&width=1080',
+                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Majesty.jpg?v=1760523200&width=540'
+            },
+
+            {
+                name: '3X PERFUME BUNDLE',
+                orignal_price: 2000.00,
+                dicounted_price: 1799.00,
+                img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_Essence.jpg?v=1760523123&width=1080',
+                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Esscense.jpg?v=1760523123&width=540',
+            },
+
+            {
+                name: 'DREAM OUD - INPIRED BY NOMAD',
+                orignal_price: 2000.00,
+                dicounted_price: 1699.00,
+                img_src1: 'https://elyscents.pk/cdn/shop/files/Dream_Oud.jpg?v=1760522968&width=1080',
+                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Dream-Oud.jpg?v=1760522968&width=540'
+            },
+            {
+                name: 'OUD VELVET - INPIRED BY SATIN',
+                orignal_price: 2000.00,
+                dicounted_price: 1799.00,
+                img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_Velvet.jpg?v=1760522977&width=1080',
+                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Velvet.jpg?v=1760522977&width=540'
+            },
+            {
+                name: 'ROYAL OUD',
+                orignal_price: 2100.00,
+                dicounted_price: 1799.00,
+                img_src1: 'https://elyscents.pk/cdn/shop/files/Royal_Oud_32df109e-c80d-4239-8c63-9f9a5a3ac58b.jpg?v=1760522995&width=1080',
+                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Royal-Oud.jpg?v=1760522995&width=540'
+            },
+
+            {
+                name: 'OUD EVERGREEN INPIRED BY WHITE OUD',
+                orignal_price: 2000.00,
+                dicounted_price: 1899.00,
+                img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_EverGreen.jpg?v=1760523484&width=1080',
+                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Evergreen.jpg?v=1760523484&width=540'
+            },
+            {
+                name: 'RESHAM OUD _ INPIRED BY AMBER',
+                orignal_price: 2000.00,
+                dicounted_price: 1899.00,
+                img_src1: 'https://elyscents.pk/cdn/shop/files/resham_oud.jpg?v=1760523035&width=1080',
+                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Resham-Oud.jpg?v=1760523035&width=540'
+            },
+            {
+                name: 'CRYSTAL OUD _ INPIRED BY ONE MAN',
+                orignal_price: 2000.00,
+                dicounted_price: 1899.00,
+                img_src1: 'https://elyscents.pk/cdn/shop/files/Crystal_Oud.jpg?v=1760523084&width=1080',
+                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Crystal-Oud.jpg?v=1760523084&width=540'
+            },
+        ])},[])
 
     useEffect(() => {
         const handleResize = () => {
@@ -17,72 +89,8 @@ const Oud_collection = () => {
         window.addEventListener('resize', handleResize)
         return () => window.removeEventListener('resize', handleResize)
     }, [])
-    const [OudProducts , setOudProducts] = useState([
 
-        {
-            name: 'OUD MAJESTY INSPIRED BY SHAMS',
-            orignal_price: 2000.00,
-            dicounted_price: 1899.00,
-            img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_majesty.jpg?v=1760523188&width=1080',
-            img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Majesty.jpg?v=1760523200&width=540'
-        },
-
-        {
-            name: '3X PERFUME BUNDLE',
-            orignal_price: 2000.00,
-            dicounted_price: 1799.00,
-            img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_Essence.jpg?v=1760523123&width=1080',
-            img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Esscense.jpg?v=1760523123&width=540',
-        },
-
-        {
-            name: 'DREAM OUD - INPIRED BY NOMAD',
-            orignal_price: 2000.00,
-            dicounted_price: 1699.00,
-            img_src1: 'https://elyscents.pk/cdn/shop/files/Dream_Oud.jpg?v=1760522968&width=1080',
-            img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Dream-Oud.jpg?v=1760522968&width=540'
-        },
-        {
-            name: 'OUD VELVET - INPIRED BY SATIN',
-            orignal_price: 2000.00,
-            dicounted_price: 1799.00,
-            img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_Velvet.jpg?v=1760522977&width=1080',
-            img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Velvet.jpg?v=1760522977&width=540'
-        },
-        {
-            name: 'ROYAL OUD',
-            orignal_price: 2100.00,
-            dicounted_price: 1799.00,
-            img_src1: 'https://elyscents.pk/cdn/shop/files/Royal_Oud_32df109e-c80d-4239-8c63-9f9a5a3ac58b.jpg?v=1760522995&width=1080',
-            img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Royal-Oud.jpg?v=1760522995&width=540'
-        },
-
-        {
-            name: 'OUD EVERGREEN INPIRED BY WHITE OUD',
-            orignal_price: 2000.00,
-            dicounted_price: 1899.00,
-            img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_EverGreen.jpg?v=1760523484&width=1080',
-            img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Evergreen.jpg?v=1760523484&width=540'
-        },
-        {
-            name: 'RESHAM OUD _ INPIRED BY AMBER',
-            orignal_price: 2000.00,
-            dicounted_price: 1899.00,
-            img_src1: 'https://elyscents.pk/cdn/shop/files/resham_oud.jpg?v=1760523035&width=1080',
-            img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Resham-Oud.jpg?v=1760523035&width=540'
-        },
-        {
-            name: 'CRYSTAL OUD _ INPIRED BY ONE MAN',
-            orignal_price: 2000.00,
-            dicounted_price: 1899.00,
-            img_src1: 'https://elyscents.pk/cdn/shop/files/Crystal_Oud.jpg?v=1760523084&width=1080',
-            img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Crystal-Oud.jpg?v=1760523084&width=540'
-        },
-
-
-    ]);
-        
-    const CartItem = (value: any, index: number) => (
+    const CartItem = (value: IOudProductsType, index: number) => (
         <div className={style.carts_prnt} key={index}>
             <div className={style.cart_image}>
                 <img
@@ -130,13 +138,13 @@ const Oud_collection = () => {
             <div className={style.cart_sec_main}>
                 {!isMobile ? (
                     <div className={style.crazydeal_parnt}>
-                        {OudProducts.map((value, index) =>
+                        {OudProducts.map((value: IOudProductsType, index: number) =>
                             CartItem(value, index)
                         )}
                     </div>
                 ) : (
                     <Swiper slidesPerView={1.2} spaceBetween={15}>
-                        {OudProducts.map((value, index) => (
+                        {OudProducts.map((value: IOudProductsType, index: number) => (
                             <SwiperSlide key={index}>
                                 {CartItem(value, index)}
                             </SwiperSlide>

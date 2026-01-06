@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import Image from '@/src/components/mn_image/image'
 import Crazy_deal from '../crazy_deals/crazy_deal'
 import Scents_deal from '@/src/components/scents_image/scents_deal'
@@ -14,12 +15,16 @@ import Footer from '@/src/shared_components/footer/footer'
 
 const HomePage = () => {
 
+    const [ScentsDetImg , setScentsDetImg] = useState(
+        "https://elyscents.pk/cdn/shop/files/center_BAnner_new_size_3.jpg?v=1760429422&width=1920" 
+    ) 
+
     return (
 
         <>
             <Image />
             <Crazy_deal />
-            <Scents_deal />
+            <Scents_deal ScentsDetImg ={ScentsDetImg} />
             <Best_seller />
             <Perfect_duo_image />
             <For_her_sec />

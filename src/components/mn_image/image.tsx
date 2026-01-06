@@ -8,13 +8,6 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-// {
-//   review: "its bettter then others"
-//   name: "ayaan fareed"
-//   stars: 5,
-// link:"product link"
-  
-// }
 
 const Image = () => {
   const [images, setImages] = useState([
