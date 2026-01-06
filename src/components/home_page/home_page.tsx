@@ -15,25 +15,28 @@ import Footer from '@/src/shared_components/footer/footer'
 
 const HomePage = () => {
 
-    const [ScentsDetImg , setScentsDetImg] = useState(
-        "https://elyscents.pk/cdn/shop/files/center_BAnner_new_size_3.jpg?v=1760429422&width=1920" 
-    ) 
+    const [ScentsDetImg, setScentsDetImg] = useState(
+        "https://elyscents.pk/cdn/shop/files/center_BAnner_new_size_3.jpg?v=1760429422&width=1920"
+    )
+
+    const [PerfectDuo, setPerfectDuo] = useState(
+        "https://elyscents.pk/cdn/shop/files/center_BAnner_new_size_3000x1200_0b8e836f-955d-4aa5-99c6-f94497b4aab7.jpg?v=1760429421&width=1920"
+    )
 
     return (
 
         <>
             <Image />
             <Crazy_deal />
-            <Scents_deal ScentsDetImg ={ScentsDetImg} />
+            <Scents_deal ScentsDetImg={ScentsDetImg} />
             <Best_seller />
-            <Perfect_duo_image />
+            <Perfect_duo_image PerfectDuo={PerfectDuo} />
             <For_her_sec />
             <For_him />
             <Oud_collection />
             <Our_collection_img />
             <Customer_saying />
             <Our_outlets />
-
         </>
 
 

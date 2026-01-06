@@ -6,11 +6,10 @@ type IScentsDealProps = {
     ScentsDetImg : string
 }
 const Scents_deal = ({ScentsDetImg}:IScentsDealProps) => {
-    console.log(ScentsDetImg)
     return (
         <>
             <div className={style.deal_image}>
-                <img src="https://elyscents.pk/cdn/shop/files/center_BAnner_new_size_3.jpg?v=1760429422&width=1920" 
+                <img src={ScentsDetImg}
                 alt="" className={style.scents_img} />
             </div>
         </>
