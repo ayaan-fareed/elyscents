@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import style from './oud_colllection.module.scss'
 
-type IOudProductsType= {
+type IOudProductsType = {
     name: string,
     orignal_price: number,
     dicounted_price: number,
@@ -78,16 +78,11 @@ const Oud_collection = () => {
                 img_src1: 'https://elyscents.pk/cdn/shop/files/Crystal_Oud.jpg?v=1760523084&width=1080',
                 img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Crystal-Oud.jpg?v=1760523084&width=540'
             },
-        ])},[])
+        ])
+    }, [])
 
     useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768)
-        }
-
-        handleResize()
-        window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize)
+        setIsMobile(window.innerWidth <= 768)
     }, [])
 
     const CartItem = (value: IOudProductsType, index: number) => (

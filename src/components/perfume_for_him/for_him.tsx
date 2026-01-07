@@ -80,14 +80,9 @@ const For_him = () => {
             },
         ])
     }, [])
+    
     useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768)
-        }
-
-        handleResize()
-        window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize)
+        setIsMobile(window.innerWidth <= 768)
     }, [])
 
 
@@ -139,8 +134,8 @@ const For_him = () => {
             <div className={style.cart_sec_main}>
                 {!isMobile ? (
                     <div className={style.crazydeal_parnt}>
-                        {ForHim.map((value: IForHimType , index: number) =>
-                            CartItem(value , index)
+                        {ForHim.map((value: IForHimType, index: number) =>
+                            CartItem(value, index)
                         )}
                     </div>
                 ) : (

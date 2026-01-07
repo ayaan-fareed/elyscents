@@ -84,13 +84,7 @@ const For_her_sec = () => {
     }, [])
 
     useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768)
-        }
-
-        handleResize()
-        window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize)
+        setIsMobile(window.innerWidth <= 768)
     }, [])
 
     const CartItem = (value: IForHerType, index: number) => (

@@ -118,7 +118,7 @@ const Nav = () => {
 
         {menuItems.map((item) => (
           <div key={item.text}>
-            <div className={style.drawer_text}
+            <div className={style.drawer_text} 
               onClick={() => {
                 toggleDrawer(false);
                 router.push(item.path);
@@ -144,7 +144,7 @@ const Nav = () => {
             <FaYoutube />,
             <FaTiktok />
           ].map((icon, i) => (
-            <div className={style.icons_style}>
+            <div className={style.icons_style} key={i}>
               {icon}
             </div>
           ))}

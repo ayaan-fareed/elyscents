@@ -26,13 +26,12 @@ const Our_collection_img = () => {
                 <div className={style.heading_text}>
                     <h2>OUR PRODUCT COLLECTIONS</h2>
                 </div>
-                <div className={style.image_container}>
+                <div className={style.image_container} >
                     
                     {ProductCollections.map((item, index) => (
-                        <div className={style.image_styling}>
+                        <div className={style.image_styling} key={index} >
                             <h2 className={style.img_txt}>{item.title}</h2>
                             <img src={item.img_src
-
                             }
                                 alt="" className={style.collection_img} />
                         </div>
