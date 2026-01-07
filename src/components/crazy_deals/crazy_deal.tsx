@@ -82,8 +82,6 @@ const Crazy_deal = () => {
     setIsMobile(window.innerWidth <= 768)
   }, [])
 
-
-
   const CartItem = (value: ICrazyProductsType, index: number) => (
     <div className={style.carts_prnt} key={index}>
       <div className={style.cart_image}>
@@ -136,7 +134,7 @@ const Crazy_deal = () => {
               CartItem(value, index)
             )}
           </div>
-        ) : (
+          ):(
           <Swiper slidesPerView={1.2} spaceBetween={15}>
             {CrazyProducts.map((value, index) => (
               <SwiperSlide key={index}>
@@ -146,7 +144,6 @@ const Crazy_deal = () => {
             ))}
           </Swiper>
         )}
-
         <div className={style.view_btn}>
           <button>VIEW ALL</button>
         </div>
