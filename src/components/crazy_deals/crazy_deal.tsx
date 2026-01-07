@@ -4,6 +4,65 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import style from './crazy_deal.module.scss'
 
+const data = [
+  {
+    name: '4X PERFUME BUNDLE',
+    orignal_price: 7596.00,
+    dicounted_price: 5599.00,
+    img_src1: 'https://elyscents.pk/cdn/shop/files/4_perfume_new_1.jpg?v=1764960763&width=360',
+    img_src2: 'https://elyscents.pk/cdn/shop/files/4_perfume_new_1.jpg?v=1764960763&width=360'
+  },
+  {
+    name: '3X PERFUME BUNDLE',
+    orignal_price: 5700.00,
+    dicounted_price: 4444.00,
+    img_src1: 'https://elyscents.pk/cdn/shop/files/3_perfume_Deal.jpg?v=1760181185&width=1080',
+    img_src2: 'https://elyscents.pk/cdn/shop/files/3perfume.jpg?v=1760181185&width=360',
+  },
+  {
+    name: 'THE PERFECT DUO',
+    orignal_price: 3700.00,
+    dicounted_price: 2999.00,
+    img_src1: 'https://elyscents.pk/cdn/shop/files/perfect_Duo_2.0.jpg?v=1760428407&width=720',
+    img_src2: 'https://elyscents.pk/cdn/shop/files/perfect_Duo_2.0.jpg?v=1760428407&width=720'
+  },
+  {
+    name: '6X MEGA DEAL',
+    orignal_price: 11400.00,
+    dicounted_price: 8399.00,
+    img_src1: 'https://elyscents.pk/cdn/shop/files/SKU.jpg?v=1764765674&width=540',
+    img_src2: 'https://elyscents.pk/cdn/shop/files/SKU.jpg?v=1764765674&width=540'
+  },
+  {
+    name: 'OUD DUO COMBO',
+    orignal_price: 3900.00,
+    dicounted_price: 3199.00,
+    img_src1: 'https://elyscents.pk/cdn/shop/files/ouddeal_1.jpg?v=1766596989&width=360',
+    img_src2: 'https://elyscents.pk/cdn/shop/files/ouddeal_1.jpg?v=1766596989&width=360'
+  },
+  {
+    name: 'TOP 3 BEST SELLERS',
+    orignal_price: 5600.00,
+    dicounted_price: 4400.00,
+    img_src1: 'https://elyscents.pk/cdn/shop/files/image_5.png?v=1763039447&width=360',
+    img_src2: 'https://elyscents.pk/cdn/shop/files/image_5.png?v=1763039447&width=360'
+  },
+  {
+    name: 'OFFICE DEAL',
+    orignal_price: 5700.00,
+    dicounted_price: 4400.00,
+    img_src1: 'https://elyscents.pk/cdn/shop/files/officedeal.jpg?v=1765439449&width=360',
+    img_src2: 'https://elyscents.pk/cdn/shop/files/officedeal.jpg?v=1765439449&width=360'
+  },
+  {
+    name: 'TESTER BOX',
+    orignal_price: 1250.00,
+    dicounted_price: 990.00,
+    img_src1: 'https://elyscents.pk/cdn/shop/files/testerbox1.jpg?v=1760517576&width=1080',
+    img_src2: 'https://elyscents.pk/cdn/shop/files/testerbox2.jpg?v=1760517577&width=360'
+  },
+]
+
 type ICrazyProductsType = {
   name: string,
   orignal_price: number,
@@ -17,70 +76,22 @@ const Crazy_deal = () => {
   const [CrazyProducts, setCrazyProducts] = useState<ICrazyProductsType[]>([])
 
   useEffect(() => {
-    setCrazyProducts([
-      {
-        name: '4X PERFUME BUNDLE',
-        orignal_price: 7596.00,
-        dicounted_price: 5599.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/4_perfume_new_1.jpg?v=1764960763&width=360',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/4_perfume_new_1.jpg?v=1764960763&width=360'
-      },
-      {
-        name: '3X PERFUME BUNDLE',
-        orignal_price: 5700.00,
-        dicounted_price: 4444.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/3_perfume_Deal.jpg?v=1760181185&width=1080',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/3perfume.jpg?v=1760181185&width=360',
-      },
-      {
-        name: 'THE PERFECT DUO',
-        orignal_price: 3700.00,
-        dicounted_price: 2999.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/perfect_Duo_2.0.jpg?v=1760428407&width=720',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/perfect_Duo_2.0.jpg?v=1760428407&width=720'
-      },
-      {
-        name: '6X MEGA DEAL',
-        orignal_price: 11400.00,
-        dicounted_price: 8399.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/SKU.jpg?v=1764765674&width=540',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/SKU.jpg?v=1764765674&width=540'
-      },
-      {
-        name: 'OUD DUO COMBO',
-        orignal_price: 3900.00,
-        dicounted_price: 3199.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/ouddeal_1.jpg?v=1766596989&width=360',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/ouddeal_1.jpg?v=1766596989&width=360'
-      },
-      {
-        name: 'TOP 3 BEST SELLERS',
-        orignal_price: 5600.00,
-        dicounted_price: 4400.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/image_5.png?v=1763039447&width=360',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/image_5.png?v=1763039447&width=360'
-      },
-      {
-        name: 'OFFICE DEAL',
-        orignal_price: 5700.00,
-        dicounted_price: 4400.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/officedeal.jpg?v=1765439449&width=360',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/officedeal.jpg?v=1765439449&width=360'
-      },
-      {
-        name: 'TESTER BOX',
-        orignal_price: 1250.00,
-        dicounted_price: 990.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/testerbox1.jpg?v=1760517576&width=1080',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/testerbox2.jpg?v=1760517577&width=360'
-      },
-    ]
+    const sortedByLowPrice = [...data].sort(
+      (a, b) => a.dicounted_price - b.dicounted_price
     )
+    // const sortedByAlpha = [...data].sort(
+    //   (a , b) => a.name.localeCompare(b.name)
+    // )
+    setCrazyProducts(sortedByLowPrice)
+    // setCrazyProducts(data)
   }, [])
 
   useEffect(() => {
     setIsMobile(window.innerWidth <= 768)
   }, [])
+
+
+
 
   const CartItem = (value: ICrazyProductsType, index: number) => (
     <div className={style.carts_prnt} key={index}>
@@ -134,7 +145,7 @@ const Crazy_deal = () => {
               CartItem(value, index)
             )}
           </div>
-          ):(
+        ) : (
           <Swiper slidesPerView={1.2} spaceBetween={15}>
             {CrazyProducts.map((value, index) => (
               <SwiperSlide key={index}>

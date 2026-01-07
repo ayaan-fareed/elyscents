@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import style from './for_her_sec.module.scss'
+import { MdSortByAlpha } from 'react-icons/md'
 
 type IForHerType = {
     name: string,
@@ -12,13 +13,8 @@ type IForHerType = {
     img_src2: string
 }
 
-const For_her_sec = () => {
-    const [hoverIndex, setHoverIndex] = useState<any>(null)
-    const [isMobile, setIsMobile] = useState(false)
-    const [ForHer, setForHer] = useState<IForHerType[]>([])
 
-    useEffect(() => {
-        setForHer([
+const data = [
 
             {
                 name: 'ROSE BLOSSOM - INSPIRED BY Gucci',
@@ -80,8 +76,20 @@ const For_her_sec = () => {
                 img_src1: 'https://elyscents.pk/cdn/shop/files/velina_2323b953-0e39-4cdb-899e-bd1faeb68d9d.jpg?v=1760522545&width=1080',
                 img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscent-Velina.jpg?v=1760522545&width=360'
             },
-        ])
+        ]
+
+const For_her_sec = () => {
+    const [hoverIndex, setHoverIndex] = useState<any>(null)
+    const [isMobile, setIsMobile] = useState(false)
+    const [ForHer, setForHer] = useState<IForHerType[]>([])
+
+    useEffect(() => {
+        const sortedByAlpha = [...data].sort(
+      (a, b) => a.name.localeCompare (b.name)
+    )
+    setForHer(sortedByAlpha)
     }, [])
+    
 
     useEffect(() => {
         setIsMobile(window.innerWidth <= 768)
