@@ -80,7 +80,7 @@ const For_him = () => {
             },
         ])
     }, [])
-    
+
     useEffect(() => {
         setIsMobile(window.innerWidth <= 768)
     }, [])
