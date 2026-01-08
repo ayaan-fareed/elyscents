@@ -133,13 +133,13 @@ const Crazy_deal = () => {
   }
   return (
     <>
-      <div className={style.filter_btn}>
+      {/* <div className={style.filter_btn}>
         <h1>Filter</h1>
         <button onClick={() => filterFunction("A")}>A-Z</button>
         <button onClick={() => filterFunction("b")}>Z-A</button>
         <button onClick={() => filterFunction("c")}>HighestPrice</button>
         <button onClick={() => filterFunction("D")}>LowestPrice</button>
-      </div>
+      </div> */}
       <div className={style.deals_sec}>
         <h2 className={style.heading_txt}>CRAZY DEALS</h2>
       </div>
