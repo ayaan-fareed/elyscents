@@ -76,16 +76,13 @@ const Crazy_deal = () => {
   const [isMobile, setIsMobile] = useState(false)
   const [CrazyProducts, setCrazyProducts] = useState<ICrazyProductsType[]>([])
 
-  // useEffect(() => {
-  //     const sortedByLowPrice = [...data].sort(
+  useEffect(() => {
+    const sortedByLowPrice = [...data].sort(
+      (a, b) => a.dicounted_price - b.dicounted_price
+    )
 
-  //     (a, b) => b.dicounted_price - a.dicounted_price
-  //   )
-  //   setCrazyProducts(sortedByLowPrice)
-  //        console.log(sortedByLowPrice)
-
-  // }, [])
-
+    setCrazyProducts(sortedByLowPrice)
+  }, [])
 
   useEffect(() => {
     setIsMobile(window.innerWidth <= 768)
@@ -131,54 +128,15 @@ const Crazy_deal = () => {
     </div>
   );
 
-  ////////////////////////////////////////////////NEW CODE////////////////////////////////////////////
-  useEffect(() => {
-    if (data.length > 0) {
-      setCrazyProducts(data);
-    }
-  }, [data]);
-
-  const filterFunction = (type: string) => {
-    let sortedData = [...data];
-
-    if (type === "A") {
-      console.log(type)
-
-      sortedData.sort((a, b) =>
-        a.name.localeCompare(b.name)
-      );
-    }
-
-    else if (type === "b") {
-      console.log(type)
-      sortedData.sort((a, b) =>
-        b.name.localeCompare(a.name)
-      );
-    }
-
-    else if (type === "c") {
-      console.log(type)
-      sortedData.sort(
-        (a, b) => b.dicounted_price - a.dicounted_price
-      );
-    }
-
-    else if (type === "D") {
-      console.log(type)
-      sortedData.sort(
-        (a, b) => a.dicounted_price - b.dicounted_price
-      );
-      setCrazyProducts(sortedData);
-    }
-  };
-  //////////////////////////////////////////////////////////////////////////////////////////////
-
+  const filterFunction = (text:string) => {
+    alert("A-Z")
+  }
   return (
     <>
       <div className={style.filter_btn}>
         <h1>Filter</h1>
-        <button onClick={() => filterFunction("A")}>A to Z</button>
-        <button onClick={() => filterFunction("b")}>Z to A</button>
+        <button onClick={() => filterFunction("A")}>A-Z</button>
+        <button onClick={() => filterFunction("b")}>Z-A</button>
         <button onClick={() => filterFunction("c")}>HighestPrice</button>
         <button onClick={() => filterFunction("D")}>LowestPrice</button>
       </div>
