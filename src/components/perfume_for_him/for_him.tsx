@@ -80,7 +80,7 @@ const For_him = () => {
     ]
 
     useEffect(() => {
-        const filterProducts = data.filter (item => item.dicounted_price < 1700);
+        const filterProducts = data.filter(item => item.dicounted_price < 1700);
         setForHim(filterProducts)
     }, [])
 

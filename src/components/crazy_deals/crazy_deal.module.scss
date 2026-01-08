@@ -266,4 +266,21 @@
   }
 }
 
-
+.filter_btn{
+  display: flex;
+  gap: 15px;
+  margin-top: 3%;
+  margin-left: 11%;
+ 
+  h1{
+     color: black;
+     font-weight: bold;
+     padding: 10px;
+  }
+  button{
+    padding: 10px;
+    color: white;
+    background-color: #c45f5f;
+    cursor: pointer;
+  }
+}
