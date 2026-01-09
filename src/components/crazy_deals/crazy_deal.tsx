@@ -77,11 +77,7 @@ const Crazy_deal = () => {
   const [CrazyProducts, setCrazyProducts] = useState<ICrazyProductsType[]>([])
 
   useEffect(() => {
-    const sortedByLowPrice = [...data].sort(
-      (a, b) => a.dicounted_price - b.dicounted_price
-    )
-
-    setCrazyProducts(sortedByLowPrice)
+    setCrazyProducts(data)
   }, [])
 
   useEffect(() => {
@@ -128,17 +124,41 @@ const Crazy_deal = () => {
     </div>
   );
 
-  const filterFunction = (text:string) => {
-    alert("A-Z")
-  }
+  // const filterFunction = (type: string) => {
+  //   if (type === "A-Z") {
+  //     const sortedByAlpha = [...data].sort(
+  //       (a, b) => a.name.localeCompare(b.name)
+  //     )
+  //     setCrazyProducts(sortedByAlpha)
+  //   }
+
+  //   else if (type === "Z-A") {
+  //     const sortByReverseAlpha = [...data].sort(
+  //       (a, b) => b.name.localeCompare(a.name)
+  //     )
+  //     setCrazyProducts(sortByReverseAlpha)
+  //   }
+  //   else if (type === "HighestPrice") {
+  //     const sortHigherPrice = [...data].sort(
+  //       (a, b) => b.dicounted_price - a.dicounted_price
+  //     )
+  //     setCrazyProducts(sortHigherPrice)
+  //   }
+  //   else if (type === "LowerPrice") {
+  //     const sortByLowestPrice = [...data].sort(
+  //       (a, b) => a.dicounted_price - b.dicounted_price
+  //     )
+  //     setCrazyProducts(sortByLowestPrice)
+  //   }
+  // }
   return (
     <>
       {/* <div className={style.filter_btn}>
         <h1>Filter</h1>
-        <button onClick={() => filterFunction("A")}>A-Z</button>
-        <button onClick={() => filterFunction("b")}>Z-A</button>
-        <button onClick={() => filterFunction("c")}>HighestPrice</button>
-        <button onClick={() => filterFunction("D")}>LowestPrice</button>
+        <button onClick={() => filterFunction("A-Z")}>A-Z</button>
+        <button onClick={() => filterFunction("Z-A")}>Z-A</button>
+        <button onClick={() => filterFunction("HighestPrice")}>HighestPrice</button>
+        <button onClick={() => filterFunction("LowerPrice")}>LowestPrice</button>
       </div> */}
       <div className={style.deals_sec}>
         <h2 className={style.heading_txt}>CRAZY DEALS</h2>
@@ -162,7 +182,7 @@ const Crazy_deal = () => {
           </Swiper>
         )}
         <div className={style.view_btn}>
-          <Link href="/viewAllBtn_crazyDeal">
+          <Link href="/crazy_deals">
             <button>VIEW ALL</button>
           </Link>
         </div>

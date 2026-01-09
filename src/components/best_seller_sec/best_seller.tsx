@@ -89,7 +89,7 @@ const Best_seller = () => {
 
     useEffect(() => {
         const sortedByReverseAlpha = [...data].sort(
-            (a , b)=> b.name.localeCompare(a.name)
+            (a, b) => b.name.localeCompare(a.name)
         )
         setProducts(sortedByReverseAlpha)
     }, [])
