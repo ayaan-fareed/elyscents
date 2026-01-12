@@ -123,43 +123,8 @@ const Crazy_deal = () => {
       </div>
     </div>
   );
-
-  // const filterFunction = (type: string) => {
-  //   if (type === "A-Z") {
-  //     const sortedByAlpha = [...data].sort(
-  //       (a, b) => a.name.localeCompare(b.name)
-  //     )
-  //     setCrazyProducts(sortedByAlpha)
-  //   }
-
-  //   else if (type === "Z-A") {
-  //     const sortByReverseAlpha = [...data].sort(
-  //       (a, b) => b.name.localeCompare(a.name)
-  //     )
-  //     setCrazyProducts(sortByReverseAlpha)
-  //   }
-  //   else if (type === "HighestPrice") {
-  //     const sortHigherPrice = [...data].sort(
-  //       (a, b) => b.dicounted_price - a.dicounted_price
-  //     )
-  //     setCrazyProducts(sortHigherPrice)
-  //   }
-  //   else if (type === "LowerPrice") {
-  //     const sortByLowestPrice = [...data].sort(
-  //       (a, b) => a.dicounted_price - b.dicounted_price
-  //     )
-  //     setCrazyProducts(sortByLowestPrice)
-  //   }
-  // }
   return (
     <>
-      {/* <div className={style.filter_btn}>
-        <h1>Filter</h1>
-        <button onClick={() => filterFunction("A-Z")}>A-Z</button>
-        <button onClick={() => filterFunction("Z-A")}>Z-A</button>
-        <button onClick={() => filterFunction("HighestPrice")}>HighestPrice</button>
-        <button onClick={() => filterFunction("LowerPrice")}>LowestPrice</button>
-      </div> */}
       <div className={style.deals_sec}>
         <h2 className={style.heading_txt}>CRAZY DEALS</h2>
       </div>

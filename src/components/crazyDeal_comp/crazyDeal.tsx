@@ -149,32 +149,34 @@ const CrazyDeal = () => {
             )
             setCrazyProducts(sortByLowestPrice)
         }
+        else {
+            setCrazyProducts(data)
+        }
     }
     return (
         <>
-            <div className={style.main_container}>
-                <div className={style.image_cont}>
-                    <img src="https://elyscents.pk/cdn/shop/files/elyscents-banner.jpg?v=1716647770&width=1920" alt="img" className={style.mn_image} />
-                </div>
-                <div className={style.filter_sec}>
-                    <div>
-                        <button className={style.filtr_btn}> <VscSettings />Filter</button>
-                    </div>
-                    <div>
-                        <p className={style.array_products}>8 products</p>
-                    </div>
-                    <div className={style.select_wrapper}>
-                        <select onChange={(e) => filterFunction(e.target.value)}>
-                            <option  selected value="featured">Featured</option>
-                            <option value="A-Z">Alphabetically, A-Z</option>
-                            <option value="Z-A">Alphabetically, Z-A</option>
-                            <option value="LowerPrice">Price, low to high</option>
-                            <option value="HighestPrice">Price, high to low</option>
-                        </select>
-                    </div>
-                </div>
+            <div className={style.image_cont}>
+                <img src="https://elyscents.pk/cdn/shop/files/elyscents-banner.jpg?v=1716647770&width=1920" alt="img" className={style.mn_image} />
             </div>
+
             <div className={style.cart_sec_main}>
+                <div className={style.main_container}>
+                    <div className={style.filter_sec}>
+                        <div>
+                            <p className={style.array_products}> {data.length} products</p>
+                        </div>
+                        <div className={style.select_wrapper}>
+                            <select onChange={(e) => filterFunction(e.target.value)}>
+                                <option selected value="featured">Featured</option>
+                                <option value="A-Z">Alphabetically, A-Z</option>
+                                <option value="Z-A">Alphabetically, Z-A</option>
+                                <option value="LowerPrice">Price, low to high</option>
+                                <option value="HighestPrice">Price, high to low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 {!isMobile ? (
                     <div className={style.crazydeal_parnt}>
                         {CrazyProducts.map((value, index) =>
