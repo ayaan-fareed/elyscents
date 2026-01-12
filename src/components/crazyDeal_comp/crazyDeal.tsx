@@ -123,7 +123,33 @@ const CrazyDeal = () => {
             </div>
         </div>
     );
+    const filterFunction = (type: string) => {
+        if (type === "A-Z") {
+            const sortedByAlpha = [...data].sort(
+                (a, b) => a.name.localeCompare(b.name)
+            )
+            setCrazyProducts(sortedByAlpha)
+        }
 
+        else if (type === "Z-A") {
+            const sortByReverseAlpha = [...data].sort(
+                (a, b) => b.name.localeCompare(a.name)
+            )
+            setCrazyProducts(sortByReverseAlpha)
+        }
+        else if (type === "HighestPrice") {
+            const sortHigherPrice = [...data].sort(
+                (a, b) => b.dicounted_price - a.dicounted_price
+            )
+            setCrazyProducts(sortHigherPrice)
+        }
+        else if (type === "LowerPrice") {
+            const sortByLowestPrice = [...data].sort(
+                (a, b) => a.dicounted_price - b.dicounted_price
+            )
+            setCrazyProducts(sortByLowestPrice)
+        }
+    }
     return (
         <>
             <div className={style.main_container}>
@@ -138,14 +164,12 @@ const CrazyDeal = () => {
                         <p className={style.array_products}>8 products</p>
                     </div>
                     <div className={style.select_wrapper}>
-                        <select>
-                            <option selected value="featured">Featured</option>
-                            <option value='sort'>Sort</option>
-                            <option value='Best selling'>Best selling</option>
-                            <option value='A-Z'>Alphabetically, A-Z</option>
-                            <option value='Z-A'>Alphabetically, Z-A</option>
-                            <option value='low to high'>Price, low to high</option>
-                            <option value='high to low'>Price, high to low</option>
+                        <select onChange={(e) => filterFunction(e.target.value)}>
+                            <option  selected value="featured">Featured</option>
+                            <option value="A-Z">Alphabetically, A-Z</option>
+                            <option value="Z-A">Alphabetically, Z-A</option>
+                            <option value="LowerPrice">Price, low to high</option>
+                            <option value="HighestPrice">Price, high to low</option>
                         </select>
                     </div>
                 </div>
