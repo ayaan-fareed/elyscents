@@ -10,6 +10,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 40px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 20px;
     margin-top: 10%;
@@ -171,9 +172,9 @@
 
 @media (max-width: 768px) {
     .filter_sec {
-        gap: 244px;
+        width: 336px;
+        gap: 41px;
         margin: 0 auto;
-        width: 538px;
     }
 
     .select_wrapper select {
