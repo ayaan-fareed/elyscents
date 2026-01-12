@@ -10,7 +10,6 @@
     justify-content: space-between;
     align-items: center;
     gap: 40px;
-    max-width: 1500px;
     margin: 0 auto;
     padding: 0 20px;
     margin-top: 10%;
@@ -172,8 +171,9 @@
 
 @media (max-width: 768px) {
     .filter_sec {
-        flex-direction: column;
-        gap: 20px;
+        gap: 244px;
+        margin: 0 auto;
+        width: 538px;
     }
 
     .select_wrapper select {
@@ -182,7 +182,7 @@
 
     .cart_sec_main {
         width: 80%;
-        margin: 13% auto;
+        margin: 10% auto;
     }
 
     .crazydeal_parnt {
