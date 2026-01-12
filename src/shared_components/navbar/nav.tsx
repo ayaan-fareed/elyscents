@@ -139,10 +139,10 @@ const Nav = () => {
 
         <div className={style.social_icon_cont}>
           {[
-            <FaInstagram />,
-            <FaFacebookF />,
-            <FaYoutube />,
-            <FaTiktok />
+          <a href="https://www.instagram.com/elyscents.pk/" target='/'>< FaInstagram /></a>  ,
+          <a href="https://www.facebook.com/profile.php?id=61556004412531" target='/'>< FaFacebookF /></a>  ,
+          <a href="https://www.youtube.com/@elyscents" target='/'>< FaYoutube /></a>  ,
+          <a href="https://www.tiktok.com/@elyscents" target='/'>< FaTiktok /></a>  ,
           ].map((icon, i) => (
             <div className={style.icons_style} key={i}>
               {icon}
