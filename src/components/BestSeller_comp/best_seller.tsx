@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import style from './best_seller.module.scss'
-import Link from 'next/link'
 
 type IproductsType = {
     name: string,
@@ -88,10 +87,10 @@ const Best_seller = () => {
     }, [])
 
     useEffect(() => {
-        const sortedByReverseAlpha = [...data].sort(
-            (a, b) => b.name.localeCompare(a.name)
-        )
-        setProducts(sortedByReverseAlpha)
+        // const sortedByReverseAlpha = [...data].sort(
+        //     (a, b) => b.name.localeCompare(a.name)
+        // )
+        setProducts(data)
     }, [])
 
 
@@ -134,15 +133,64 @@ const Best_seller = () => {
                 <button className={style.cart_btn}>Add to Cart</button>
             </div>
         </div>
-    )
+    );
+
+        const filterFunction = (type: string) => {
+        if (type === "A-Z") {
+            const sortedByAlpha = [...data].sort(
+                (a, b) => a.name.localeCompare(b.name)
+            )
+            setProducts(sortedByAlpha)
+        }
+
+        else if (type === "Z-A") {
+            const sortByReverseAlpha = [...data].sort(
+                (a, b) => b.name.localeCompare(a.name)
+            )
+            setProducts(sortByReverseAlpha)
+        }
+        else if (type === "HighestPrice") {
+            const sortHigherPrice = [...data].sort(
+                (a, b) => b.dicounted_price - a.dicounted_price
+            )
+            setProducts(sortHigherPrice)
+        }
+        else if (type === "LowerPrice") {
+            const sortByLowestPrice = [...data].sort(
+                (a, b) => a.dicounted_price - b.dicounted_price
+            )
+            setProducts(sortByLowestPrice)
+        }
+        else {
+            setProducts(data)
+        }
+    }
 
     return (
         <>
-            <div className={style.deals_sec}>
-                <h2 className={style.heading_txt}>BEST SELLERS PERFUMES</h2>
+            <div className={style.image_cont}>
+                <img src="https://elyscents.pk/cdn/shop/files/elyscents-banner.jpg?v=1716647770&width=1920" alt="img" className={style.mn_image} />
             </div>
 
             <div className={style.cart_sec_main}>
+
+                <div className={style.main_container}>
+                    <div className={style.filter_sec}>
+                        <div>
+                            <p className={style.array_products}> {data.length} products</p>
+                        </div>
+                        <div className={style.select_wrapper}>
+                            <select onChange={(e) => filterFunction(e.target.value)}>
+                                <option selected value="featured">Featured</option>
+                                <option value="A-Z">Alphabetically, A-Z</option>
+                                <option value="Z-A">Alphabetically, Z-A</option>
+                                <option value="LowerPrice">Price, low to high</option>
+                                <option value="HighestPrice">Price, high to low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 {!isMobile ? (
                     <div className={style.crazydeal_parnt}>
                         {products.map((value, index) =>
@@ -158,12 +206,6 @@ const Best_seller = () => {
                         ))}
                     </Swiper>
                 )}
-
-                <div className={style.view_btn}>
-                    <Link href="/best_sellers">
-                        <button>VIEW ALL</button>
-                    </Link>
-                </div>
             </div>
         </>
     )

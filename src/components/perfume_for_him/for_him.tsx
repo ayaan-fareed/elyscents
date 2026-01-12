@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import style from './for_him.module.scss'
+import Link from 'next/link'
 
 type IForHimType = {
     name: string,
@@ -152,8 +153,10 @@ const For_him = () => {
                     </Swiper>
                 )}
 
-                <div className={style.view_btn}>
-                    <button>VIEW ALL</button>
+                    <div className={style.view_btn}>
+                    <Link href="/forHim">
+                        <button>VIEW ALL</button>
+                    </Link>
                 </div>
             </div>
         </>

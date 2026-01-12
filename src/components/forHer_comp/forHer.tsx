@@ -2,17 +2,15 @@
 import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
-import style from './for_her_sec.module.scss'
-import Link from 'next/link'
+import style from './forHer.module.scss'
 
-type IForHerType = {
+type IproductsType = {
     name: string,
     orignal_price: number,
     dicounted_price: number,
     img_src1: string,
-    img_src2: string
+    img_src2: string,
 }
-
 
 const data = [
 
@@ -78,24 +76,25 @@ const data = [
             },
         ]
 
-const For_her_sec = () => {
+const ForHer = () => {
     const [hoverIndex, setHoverIndex] = useState<any>(null)
     const [isMobile, setIsMobile] = useState(false)
-    const [ForHer, setForHer] = useState<IForHerType[]>([])
-
-    useEffect(() => {
-        const sortedByAlpha = [...data].sort(
-      (a, b) => a.name.localeCompare (b.name)
-    )
-    setForHer(sortedByAlpha)
-    }, [])
-    
+    const [products, setProducts] = useState<IproductsType[]>([])
 
     useEffect(() => {
         setIsMobile(window.innerWidth <= 768)
     }, [])
 
-    const CartItem = (value: IForHerType, index: number) => (
+    useEffect(() => {
+        // const sortedByReverseAlpha = [...data].sort(
+        //     (a, b) => b.name.localeCompare(a.name)
+        // )
+        setProducts(data)
+    }, [])
+
+
+
+    const CartItem = (value: IproductsType, index: number) => (
         <div className={style.carts_prnt} key={index}>
             <div className={style.cart_image}>
                 <img
@@ -133,38 +132,82 @@ const For_her_sec = () => {
                 <button className={style.cart_btn}>Add to Cart</button>
             </div>
         </div>
-    )
+    );
+
+        const filterFunction = (type: string) => {
+        if (type === "A-Z") {
+            const sortedByAlpha = [...data].sort(
+                (a, b) => a.name.localeCompare(b.name)
+            )
+            setProducts(sortedByAlpha)
+        }
+
+        else if (type === "Z-A") {
+            const sortByReverseAlpha = [...data].sort(
+                (a, b) => b.name.localeCompare(a.name)
+            )
+            setProducts(sortByReverseAlpha)
+        }
+        else if (type === "HighestPrice") {
+            const sortHigherPrice = [...data].sort(
+                (a, b) => b.dicounted_price - a.dicounted_price
+            )
+            setProducts(sortHigherPrice)
+        }
+        else if (type === "LowerPrice") {
+            const sortByLowestPrice = [...data].sort(
+                (a, b) => a.dicounted_price - b.dicounted_price
+            )
+            setProducts(sortByLowestPrice)
+        }
+        else {
+            setProducts(data)
+        }
+    }
+
     return (
         <>
-            <div className={style.deals_sec}>
-                <h2 className={style.heading_txt}>PERFUME FOR HER</h2>
+            <div className={style.image_cont}>
+                <img src="https://elyscents.pk/cdn/shop/files/elyscents-banner.jpg?v=1716647770&width=1920" alt="img" className={style.mn_image} />
             </div>
 
             <div className={style.cart_sec_main}>
+
+                <div className={style.main_container}>
+                    <div className={style.filter_sec}>
+                        <div>
+                            <p className={style.array_products}> {data.length} products</p>
+                        </div>
+                        <div className={style.select_wrapper}>
+                            <select onChange={(e) => filterFunction(e.target.value)}>
+                                <option selected value="featured">Featured</option>
+                                <option value="A-Z">Alphabetically, A-Z</option>
+                                <option value="Z-A">Alphabetically, Z-A</option>
+                                <option value="LowerPrice">Price, low to high</option>
+                                <option value="HighestPrice">Price, high to low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 {!isMobile ? (
                     <div className={style.crazydeal_parnt}>
-                        {ForHer.map((value, index) =>
+                        {products.map((value, index) =>
                             CartItem(value, index)
                         )}
                     </div>
                 ) : (
                     <Swiper slidesPerView={1.2} spaceBetween={15}>
-                        {ForHer.map((value, index) => (
+                        {products.map((value, index) => (
                             <SwiperSlide key={index}>
                                 {CartItem(value, index)}
                             </SwiperSlide>
                         ))}
                     </Swiper>
                 )}
-
-                <div className={style.view_btn}>
-                    <Link href="/forHer">
-                        <button>VIEW ALL</button>
-                    </Link>
-                </div>
             </div>
         </>
     )
 }
 
-export default For_her_sec
+export default ForHer
