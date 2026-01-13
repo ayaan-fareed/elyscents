@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import style from './crazy_deal.module.scss'
-import Link from 'next/link';
+import Link from 'next/link'
 
 const data = [
   {
@@ -88,14 +88,13 @@ const Crazy_deal = () => {
   const CartItem = (value: ICrazyProductsType, index: number) => (
     <div className={style.carts_prnt} key={index}>
       <div className={style.cart_image}>
-        <img
-          src={
-            !isMobile && hoverIndex === index
-              ? value.img_src2
-              : value.img_src1
-          }
-          onMouseEnter={() => !isMobile && setHoverIndex(index)}
-          onMouseLeave={() => !isMobile && setHoverIndex(null)} alt={value.name} />
+
+        <Link href={'productDetails'}>
+          <img src={!isMobile && hoverIndex === index ? value.img_src2 : value.img_src1}
+            onMouseEnter={() => !isMobile && setHoverIndex(index)}
+            onMouseLeave={() => !isMobile && setHoverIndex(null)} alt={value.name} />
+        </Link>
+
         <div className={style.sale_tag}>
           <p>Sale</p>
         </div>

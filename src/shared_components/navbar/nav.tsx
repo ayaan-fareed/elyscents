@@ -16,7 +16,7 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 const Nav = () => {
 
   const [open, setOpen] = React.useState(false);
-  const toggleDrawer = (value:boolean) => { setOpen(value); };
+  const toggleDrawer = (value: boolean) => { setOpen(value); };
   const router = useRouter();
 
   const menuItems = [
@@ -28,7 +28,7 @@ const Nav = () => {
   ];
 
   const [cartOpen, setCartOpen] = React.useState(false);
-  const toggleCartDrawer = (value:boolean) => {
+  const toggleCartDrawer = (value: boolean) => {
     setCartOpen(value);
   };
   return (
@@ -118,7 +118,7 @@ const Nav = () => {
 
         {menuItems.map((item) => (
           <div key={item.text}>
-            <div className={style.drawer_text} 
+            <div className={style.drawer_text}
               onClick={() => {
                 toggleDrawer(false);
                 router.push(item.path);
@@ -139,10 +139,10 @@ const Nav = () => {
 
         <div className={style.social_icon_cont}>
           {[
-          <a href="https://www.instagram.com/elyscents.pk/" target='/'>< FaInstagram /></a>  ,
-          <a href="https://www.facebook.com/profile.php?id=61556004412531" target='/'>< FaFacebookF /></a>  ,
-          <a href="https://www.youtube.com/@elyscents" target='/'>< FaYoutube /></a>  ,
-          <a href="https://www.tiktok.com/@elyscents" target='/'>< FaTiktok /></a>  ,
+            <a href="https://www.instagram.com/elyscents.pk/" target='/'>< FaInstagram /></a>,
+            <a href="https://www.facebook.com/profile.php?id=61556004412531" target='/'>< FaFacebookF /></a>,
+            <a href="https://www.youtube.com/@elyscents" target='/'>< FaYoutube /></a>,
+            <a href="https://www.tiktok.com/@elyscents" target='/'>< FaTiktok /></a>,
           ].map((icon, i) => (
             <div className={style.icons_style} key={i}>
               {icon}
@@ -167,7 +167,7 @@ const Nav = () => {
         <div className={style.close_icon}>
           <IoClose
             className={style.close_icon_mn}
-            onClick={() => toggleCartDrawer(false)}/>
+            onClick={() => toggleCartDrawer(false)} />
         </div>
 
         <div className={style.cart_drawer}>
