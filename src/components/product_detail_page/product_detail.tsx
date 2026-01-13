@@ -99,6 +99,25 @@ const Product_detail = () => {
                         </div>
                         <div>
                             <h2>Confidence, compliments & class — all in one bundle.</h2>
+                            <div className={style.accordion}>
+                                <div className={style.accordion_item}>
+                                    <div className={style.accordion_title}>
+                                        <h2>SHIPPING INFORMATION</h2>
+                                    </div>
+                                    <div className={style.accordion_content}>
+                                        <ul>
+                                            <li>What are the Delivery charges?</li>
+                                        </ul>
+                                        <p>The delivery charges are Rs 200</p>
+                                        <ul>
+                                            <li>When will my order be delivered?</li>
+                                        </ul>
+                                        <p>Delivery Timings:</p>
+                                        <p>For Karachi - 2-3 working days.</p>
+                                        <p>Outside Karachi - 3-5 working days.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
