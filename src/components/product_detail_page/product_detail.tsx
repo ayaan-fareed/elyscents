@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import { useState } from 'react'
 import style from './product_detail.module.scss'
 import { FaStar } from "react-icons/fa";
 import { CiGift } from "react-icons/ci";
@@ -6,9 +7,8 @@ import { TbWorld } from "react-icons/tb";
 import { FaCircleDot } from "react-icons/fa6";
 
 
-
-
 const Product_detail = () => {
+    const [open, setOpen] = useState(false)
     return (
         <>
             <div className={style.main_cont}>
@@ -97,27 +97,33 @@ const Product_detail = () => {
                             <p>Get any 4 perfumes for just Rs. 5599/- A deal too good to miss!</p>
                             <p>Whether you love bold, fresh, or timeless scents, this bundle lets you mix and match your favorites without breaking the bank.</p>
                         </div>
-                        <div>
+                        <div className={style.information_cont}>
                             <h2>Confidence, compliments & class — all in one bundle.</h2>
+
                             <div className={style.accordion}>
-                                <div className={style.accordion_item}>
-                                    <div className={style.accordion_title}>
-                                        <h2>SHIPPING INFORMATION</h2>
+                                <div className={`${style.accordion_item} ${open ? style.active : ''}`}>
+
+                                    <div className={style.accordion_title} onClick={() => setOpen(!open)}>
+                                        <h3>SHIPPING INFORMATION</h3>
                                     </div>
-                                    <div className={style.accordion_content}>
-                                        <ul>
-                                            <li>What are the Delivery charges?</li>
-                                        </ul>
-                                        <p>The delivery charges are Rs 200</p>
-                                        <ul>
-                                            <li>When will my order be delivered?</li>
-                                        </ul>
-                                        <p>Delivery Timings:</p>
-                                        <p>For Karachi - 2-3 working days.</p>
-                                        <p>Outside Karachi - 3-5 working days.</p>
-                                    </div>
+
+                                    {open && (
+                                        <div className={style.accordion_content}>
+                                            <ul>
+                                                <li>What are the Delivery charges?</li>
+                                            </ul>
+                                            <p>The delivery charges are Rs 200</p>
+
+                                            <ul>
+                                                <li>When will my order be delivered?</li>
+                                            </ul>
+                                            <p>For Karachi - 2-3 working days.</p>
+                                            <p>Outside Karachi - 3-5 working days.</p>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

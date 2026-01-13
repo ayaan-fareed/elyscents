@@ -164,9 +164,48 @@
                 letter-spacing: 1px;
             }
         }
+
+        .information_cont {
+            margin-top: 5%;
+
+            h2 {
+                font-size: 19px;
+                font-weight: bold;
+                margin-bottom: 5%;
+
+            }
+
+            .accordion_title {
+                border: 1px solid rgb(187, 187, 187);
+                border-bottom: none;
+                padding: 10px;
+                cursor: pointer;
+                transition: 300ms;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+
+                h3{
+                    color: rgb(97, 97, 97);
+                    letter-spacing: 2px;
+                }
+            }
+
+            .accordion_content {
+                padding: 10px;
+                transition: 300ms;
+
+                li {
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+            }
+        }
+
     }
 
-       @media (max-width:1440px) {
+
+    @media (max-width:1440px) {
         .main_cont {
             padding: 0 50px;
         }
