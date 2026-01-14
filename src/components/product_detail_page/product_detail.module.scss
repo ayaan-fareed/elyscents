@@ -180,30 +180,41 @@
                 border-bottom: none;
                 padding: 10px;
                 cursor: pointer;
-                transition: 300ms;
                 display: flex;
                 justify-content: center;
                 text-align: center;
 
-                h3{
+                h3 {
                     color: rgb(97, 97, 97);
                     letter-spacing: 2px;
                 }
             }
 
+            .accordion_item2 {
+                border-bottom: 1px solid rgb(187, 187, 187);
+
+            }
+
             .accordion_content {
-                padding: 10px;
-                transition: 300ms;
+                padding: 0 0 0 10px;
+                height: 0;
+                overflow: hidden;
+                transition: all 0.3s ease;
+
+                &.active {
+                    height: 176px;
+                    padding: 10px;
+                }
 
                 li {
-                    font-weight: bold;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 5px;
                     font-size: 18px;
                 }
             }
         }
-
     }
-
 
     @media (max-width:1440px) {
         .main_cont {

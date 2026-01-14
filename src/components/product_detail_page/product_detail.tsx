@@ -97,34 +97,53 @@ const Product_detail = () => {
                             <p>Get any 4 perfumes for just Rs. 5599/- A deal too good to miss!</p>
                             <p>Whether you love bold, fresh, or timeless scents, this bundle lets you mix and match your favorites without breaking the bank.</p>
                         </div>
+
                         <div className={style.information_cont}>
                             <h2>Confidence, compliments & class — all in one bundle.</h2>
-
-                            <div className={style.accordion}>
-                                <div className={`${style.accordion_item} ${open ? style.active : ''}`}>
-
-                                    <div className={style.accordion_title} onClick={() => setOpen(!open)}>
-                                        <h3>SHIPPING INFORMATION</h3>
-                                    </div>
-
-                                    {open && (
-                                        <div className={style.accordion_content}>
-                                            <ul>
-                                                <li>What are the Delivery charges?</li>
-                                            </ul>
+                            <div className={`${style.accordion_item} ${open ? style.active : ''}`}>
+                                <div className={style.accordion_title} onClick={() => setOpen(!open)}>
+                                    <h3>SHIPPING INFORMATION</h3>
+                                </div>
+                                <div className={`${style.accordion_content} ${open ? style.active : ''}`}>
+                                    <ul>
+                                        <li>
+                                            <strong>What are the Delivery charges?</strong>
                                             <p>The delivery charges are Rs 200</p>
-
-                                            <ul>
-                                                <li>When will my order be delivered?</li>
-                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <strong>When will my order be delivered?</strong>
                                             <p>For Karachi - 2-3 working days.</p>
                                             <p>Outside Karachi - 3-5 working days.</p>
-                                        </div>
-                                    )}
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
+                            <div className={`${style.accordion_item2} ${open ? style.active : ''}`}>
+                                <div className={style.accordion_title} onClick={() => setOpen(!open)}>
+                                    <h3>SHIPPING INFORMATION</h3>
+                                </div>
 
+                                <div className={`${style.accordion_content} ${open ? style.active : ''}`}>
+                                    <ul>
+                                        <li>
+                                            <strong>What are the Delivery charges?</strong>
+                                            <p>The delivery charges are Rs 200</p>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <strong>When will my order be delivered?</strong>
+                                            <p>For Karachi - 2-3 working days.</p>
+                                            <p>Outside Karachi - 3-5 working days.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
