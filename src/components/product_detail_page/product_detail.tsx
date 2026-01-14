@@ -125,26 +125,20 @@ const Product_detail = () => {
                                 </div>
                             </div>
 
-                            <div className={`${style.accordion_item2} ${ayaan ? style.active : ''}`}>
+                            <div className={`${style.accordion_item} ${ayaan ? style.active : ''}`}>
                                 <div className={style.accordion_title} onClick={() => setAyaan(!ayaan)}>
-                                    <h3>SHIPPING INFORMATION</h3>
+                                    <h3>ASK A QUESTION</h3>
                                     <span className={`${style.icon} ${ayaan ? style.rotate : ''}`}><FaChevronUp /></span>
                                 </div>
 
-                                <div className={`${style.accordion_content} ${ayaan ? style.active : ''}`}>
-                                    <ul>
-                                        <li>
-                                            <strong>What are the Delivery charges?</strong>
-                                            <p>The delivery charges are Rs 200</p>
-                                        </li>
-                                    </ul>
-                                    <ul>
-                                        <li>
-                                            <strong>When will my order be delivered?</strong>
-                                            <p>For Karachi - 2-3 working days.</p>
-                                            <p>Outside Karachi - 3-5 working days.</p>
-                                        </li>
-                                    </ul>
+                                <div className={`${style.accordion_content2} ${ayaan ? style.active : ''}`}>
+                                    <div>
+                                        <label htmlFor="">NAME</label>
+                                         <input type="text" /> 
+                                         <label htmlFor="">EMAIL</label>
+                                         <input type="text" />
+                                    </div>
+                                  
                                 </div>
 
                             </div>

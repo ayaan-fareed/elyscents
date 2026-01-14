@@ -174,25 +174,28 @@
                 margin-bottom: 5%;
 
             }
-
             .accordion_title {
                 border: 1px solid rgb(187, 187, 187);
                 border-bottom: none;
-                padding: 10px;
+                padding: 15px;
                 align-items: center;
                 cursor: pointer;
                 display: flex;
                 justify-content: center;
                 text-align: center;
+                position: relative;
 
                 h3 {
                     color: rgb(97, 97, 97);
-                    letter-spacing: 2px;
+                    letter-spacing: 3px;
+                    font-size: 14px;
                 }
 
                 svg {
-                    margin-left: 850%;
                     color: gray;
+                    position: absolute;
+                    right: 15;
+                    top: 18;
                 }
             }
 
@@ -204,36 +207,31 @@
                 transform: rotate(180deg);
             }
 
-
-            .accordion_item2 {
-                border: 1px solid rgb(187, 187, 187);
-                border-top: none;
-            }
-
             .accordion_content {
                 padding: 0 0 0 10px;
-                height: 0;
-                overflow: hidden;
-                transition: all 0.3s ease;
                 border: 1px solid rgb(187, 187, 187);
                 border-top: none;
                 border-bottom: none;
+                height: 0;
+                overflow: hidden;
+                transition: all 0.3s ease;
 
                 &.active {
                     height: 176px;
                     padding: 10px;
+                    margin-top: 2%;
                 }
 
                 li {
                     display: flex;
                     flex-direction: column;
                     row-gap: 5px;
-                    font-size: 18px;
+                    font-size: 17px;
                 }
 
                 p{
                     color: rgb(69, 69, 69);
-                    font-size: 17px;
+                    font-size: 16px;
                 }
             }
         }
