@@ -179,6 +179,7 @@
                 border: 1px solid rgb(187, 187, 187);
                 border-bottom: none;
                 padding: 10px;
+                align-items: center;
                 cursor: pointer;
                 display: flex;
                 justify-content: center;
@@ -188,11 +189,25 @@
                     color: rgb(97, 97, 97);
                     letter-spacing: 2px;
                 }
+
+                svg {
+                    margin-left: 850%;
+                    color: gray;
+                }
             }
 
-            .accordion_item2 {
-                border-bottom: 1px solid rgb(187, 187, 187);
+            .icon svg {
+                transition: transform 0.3s ease;
+            }
 
+            .rotate svg {
+                transform: rotate(180deg);
+            }
+
+
+            .accordion_item2 {
+                border: 1px solid rgb(187, 187, 187);
+                border-top: none;
             }
 
             .accordion_content {
@@ -200,6 +215,9 @@
                 height: 0;
                 overflow: hidden;
                 transition: all 0.3s ease;
+                border: 1px solid rgb(187, 187, 187);
+                border-top: none;
+                border-bottom: none;
 
                 &.active {
                     height: 176px;
@@ -211,6 +229,11 @@
                     flex-direction: column;
                     row-gap: 5px;
                     font-size: 18px;
+                }
+
+                p{
+                    color: rgb(69, 69, 69);
+                    font-size: 17px;
                 }
             }
         }

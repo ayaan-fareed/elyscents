@@ -4,11 +4,12 @@ import style from './product_detail.module.scss'
 import { FaStar } from "react-icons/fa";
 import { CiGift } from "react-icons/ci";
 import { TbWorld } from "react-icons/tb";
-import { FaCircleDot } from "react-icons/fa6";
+import { FaCircleDot, FaChevronUp } from "react-icons/fa6";
 
 
 const Product_detail = () => {
     const [open, setOpen] = useState(false)
+    const [ayaan, setAyaan] = useState(false)
     return (
         <>
             <div className={style.main_cont}>
@@ -99,10 +100,13 @@ const Product_detail = () => {
                         </div>
 
                         <div className={style.information_cont}>
+
                             <h2>Confidence, compliments & class — all in one bundle.</h2>
+
                             <div className={`${style.accordion_item} ${open ? style.active : ''}`}>
                                 <div className={style.accordion_title} onClick={() => setOpen(!open)}>
                                     <h3>SHIPPING INFORMATION</h3>
+                                    <span className={`${style.icon} ${open ? style.rotate : ''}`}><FaChevronUp /></span>
                                 </div>
                                 <div className={`${style.accordion_content} ${open ? style.active : ''}`}>
                                     <ul>
@@ -120,12 +124,14 @@ const Product_detail = () => {
                                     </ul>
                                 </div>
                             </div>
-                            <div className={`${style.accordion_item2} ${open ? style.active : ''}`}>
-                                <div className={style.accordion_title} onClick={() => setOpen(!open)}>
+
+                            <div className={`${style.accordion_item2} ${ayaan ? style.active : ''}`}>
+                                <div className={style.accordion_title} onClick={() => setAyaan(!ayaan)}>
                                     <h3>SHIPPING INFORMATION</h3>
+                                    <span className={`${style.icon} ${ayaan ? style.rotate : ''}`}><FaChevronUp /></span>
                                 </div>
 
-                                <div className={`${style.accordion_content} ${open ? style.active : ''}`}>
+                                <div className={`${style.accordion_content} ${ayaan ? style.active : ''}`}>
                                     <ul>
                                         <li>
                                             <strong>What are the Delivery charges?</strong>
