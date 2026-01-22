@@ -131,7 +131,7 @@ const Product_detail = () => {
                                     <span className={`${style.icon} ${ayaan ? style.rotate : ''}`}><FaChevronUp /></span>
                                 </div>
 
-                                <div className={`${style.accordion_content2} ${ayaan ? style.active : ''}`}>
+                                {/* <div className={`${style.accordion_content2} ${ayaan ? style.active : ''}`}>
                                     <div>
                                         <label htmlFor="">NAME</label>
                                          <input type="text" /> 
@@ -139,7 +139,7 @@ const Product_detail = () => {
                                          <input type="text" />
                                     </div>
                                   
-                                </div>
+                                </div> */}
 
                             </div>
                         </div>
