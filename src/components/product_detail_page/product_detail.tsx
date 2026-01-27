@@ -5,15 +5,15 @@ import { FaStar } from "react-icons/fa";
 import { CiGift } from "react-icons/ci";
 import { TbWorld } from "react-icons/tb";
 import { FaCircleDot, FaChevronUp } from "react-icons/fa6";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 
 
 const Product_detail = () => {
     const [open, setOpen] = useState(false)
     const [ayaan, setAyaan] = useState(false)
 
-     const searchParams = useSearchParams();
-  const id = searchParams.get("id");
+//      const searchParams = useSearchParams();
+//   const id = searchParams.get("id");
 
     return (
         <>

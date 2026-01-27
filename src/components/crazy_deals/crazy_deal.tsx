@@ -89,7 +89,7 @@ const Crazy_deal = () => {
     <div className={style.carts_prnt} key={index}>
       <div className={style.cart_image}>
 
-        <Link href={'productDetails?id=1'}>
+        <Link href={'productDetails'}>
           <img src={!isMobile && hoverIndex === index ? value.img_src2 : value.img_src1}
             onMouseEnter={() => !isMobile && setHoverIndex(index)}
             onMouseLeave={() => !isMobile && setHoverIndex(null)} alt={value.name} />
