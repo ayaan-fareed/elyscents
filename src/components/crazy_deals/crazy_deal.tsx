@@ -118,7 +118,7 @@ const Crazy_deal = () => {
       </div>
 
       <div className={style.addtocart_btn}>
-        <button className={style.cart_btn} >Add to Cart</button>
+        <button className={style.cart_btn}>Add to Cart</button>
       </div>
     </div>
   );
