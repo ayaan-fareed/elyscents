@@ -1,3 +1,4 @@
+
 import CrazyDeal from '@/src/components/crazyDeal_comp/crazyDeal'
 import React from 'react'
 
