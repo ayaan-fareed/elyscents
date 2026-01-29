@@ -5,6 +5,7 @@ import { VscSettings } from "react-icons/vsc";
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
+import { useRouter } from 'next/navigation'
 
 const AllPerfumes = () => {
 
@@ -12,30 +13,37 @@ const AllPerfumes = () => {
         {
             title: 'NEW',
             img_src: "https://elyscents.pk/cdn/shop/files/Dreame.jpg?v=1760523421&width=540",
+            link: '/forHim'
         },
         {
             title: 'MEN',
             img_src: "https://elyscents.pk/cdn/shop/files/rosy_Blossom.jpg?v=1760536616&width=540",
+             link: '/forHer'
         },
         {
             title: 'UNISEX',
             img_src: "https://elyscents.pk/cdn/shop/collections/unisex_01.jpg?v=1760594011&width=540",
+             link: '/oudCollection'
         },
         {
             title: 'OUD COLLECTION',
             img_src: "https://elyscents.pk/cdn/shop/files/Oud_majesty.jpg?v=1760523188&width=540",
+             link: '/oudCollection'
         },
         {
             title: 'BEST SELLER PERFUMES',
             img_src: "https://elyscents.pk/cdn/shop/files/Royal_Oud_32df109e-c80d-4239-8c63-9f9a5a3ac58b.jpg?v=1760522995&width=540",
+             link: '/best_sellers'
         },
         {
             title: 'NEW ARRIVALS',
             img_src: "https://elyscents.pk/cdn/shop/collections/4.jpg?v=1760593987&width=540",
+             link: '/forHim'
         },
         {
             title: 'CRAZY DEALS',
             img_src: "https://elyscents.pk/cdn/shop/files/4_perfume_new_1.jpg?v=1764960763&width=540",
+             link: '/crazy_deals'
         },
     ],)
 
@@ -199,6 +207,7 @@ const AllPerfumes = () => {
     const [hoverIndex, setHoverIndex] = useState<number | null>(null)
     const [isMobile, setIsMobile] = useState(false)
     const [CrazyProducts, setCrazyProducts] = useState<ICrazyProductsType[]>([])
+    const router = useRouter()
 
     useEffect(() => {
         setCrazyProducts(data)
@@ -287,11 +296,10 @@ const AllPerfumes = () => {
                     <div className={style.image_container} >
 
                         {collectionMage.map((item, index) => (
-                            <div className={style.image_styling} key={index} >
+                            <div className={style.image_styling} key={index}   onClick={() => router.push(item.link)}>
                                 <h2 className={style.img_txt}>{item.title}</h2>
-                                <img src={item.img_src
-                                }
-                                    alt="" className={style.collection_img} />
+                                <img src={item.img_src}  
+                                alt="" className={style.collection_img} />
                             </div>
                         ))}
                     </div>
