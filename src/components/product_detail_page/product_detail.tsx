@@ -106,44 +106,67 @@ const Product_detail = () => {
                             <h2>Confidence, compliments & class — all in one bundle.</h2>
 
                             <div className={`${style.accordion_item} ${open ? style.active : ''}`}>
-                                <div className={style.accordion_title} onClick={() => setOpen(!open)}>
-                                    <h3>SHIPPING INFORMATION</h3>
-                                    <span className={`${style.icon} ${open ? style.rotate : ''}`}><FaChevronUp /></span>
-                                </div>
-                                <div className={`${style.accordion_content} ${open ? style.active : ''}`}>
+                                <button className={style.accordion_title}
+                                    onClick={() => setOpen(!open)} aria-expanded={open}>
+                                    <span className={style.title}>SHIPPING INFORMATION</span>
+                                    <span className={`${style.icon} ${open ? style.rotate : ''}`}>
+                                        <FaChevronUp />
+                                    </span>
+                                </button>
+
+                                <div className={`${style.accordion_content} ${open ? style.show : ''}`}>
                                     <ul>
                                         <li>
                                             <strong>What are the Delivery charges?</strong>
                                             <p>The delivery charges are Rs 200</p>
                                         </li>
-                                    </ul>
-                                    <ul>
                                         <li>
                                             <strong>When will my order be delivered?</strong>
-                                            <p>For Karachi - 2-3 working days.</p>
-                                            <p>Outside Karachi - 3-5 working days.</p>
+                                            <p>For Karachi - 2–3 working days.</p>
+                                            <p>Outside Karachi - 3–5 working days.</p>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
 
                             <div className={`${style.accordion_item} ${ayaan ? style.active : ''}`}>
-                                <div className={style.accordion_title} onClick={() => setAyaan(!ayaan)}>
-                                    <h3>ASK A QUESTION</h3>
-                                    <span className={`${style.icon} ${ayaan ? style.rotate : ''}`}><FaChevronUp /></span>
+                                <button className={style.accordion_title}
+                                    onClick={() => setAyaan(!ayaan)} aria-expanded={ayaan}>
+                                    <span className={style.title}>ASK A QUESTION</span>
+                                    <span className={`${style.icon} ${ayaan ? style.rotate : ''}`}>
+                                        <FaChevronUp />
+                                    </span>
+                                </button>
+
+                                <div className={`${style.form_wrapper} ${ayaan ? style.show : ''}`}>
+                                    <form className={style.user_detail_form}>
+                                        <div className={style.row}>
+                                            <div className={style.field}>
+                                                <label>NAME</label>
+                                                <input type="text" />
+                                            </div>
+
+                                            <div className={style.field}>
+                                                <label>EMAIL</label>
+                                                <input type="email" />
+                                            </div>
+                                        </div>
+
+                                        <div className={style.field}>
+                                            <label>MESSAGE</label>
+                                            <textarea rows={6}></textarea>
+                                        </div>
+
+                                        <button className={style.submit_btn}>SEND</button>
+
+                                        <p className={style.captcha}>
+                                            This site is protected by hCaptcha and the hCaptcha{" "}
+                                            <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.
+                                        </p>
+                                    </form>
                                 </div>
-
-                                {/* <div className={`${style.accordion_content2} ${ayaan ? style.active : ''}`}>
-                                    <div>
-                                        <label htmlFor="">NAME</label>
-                                         <input type="text" /> 
-                                         <label htmlFor="">EMAIL</label>
-                                         <input type="text" />
-                                    </div>
-                                  
-                                </div> */}
-
                             </div>
+
                         </div>
 
                     </div>
