@@ -166,21 +166,21 @@ const Product_detail = () => {
                                     </form>
                                 </div>
                             </div>
-                            
+
                             <div className={style.social_share}>
-                                <a href="#" className={style.item}>
-                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook"/>
-                                        <span>Share</span>
+                                <a href="https://www.facebook.com/sharer.php?u=https://elyscents.pk/products/4x-perfume-bundle" className={style.item}>
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" />
+                                    <span>Share</span>
                                 </a>
 
-                                <a href="#" className={style.item}>
-                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter"/>
-                                        <span>Tweet</span>
+                                <a href="https://twitter.com/share?text=4x%20Perfume%20Bundle&url=https://elyscents.pk/products/4x-perfume-bundle" className={style.item}>
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter" />
+                                    <span>Tweet</span>
                                 </a>
 
-                                <a href="#" className={style.item}>
-                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/pinterest.svg" alt="Pinterest"/>
-                                        <span>Pin it</span>
+                                <a href="https://pinterest.com/pin/create/button/?url=https://elyscents.pk/products/4x-perfume-bundle&media=//elyscents.pk/cdn/shop/files/4_perfume_new_1_1024x1024.jpg?v=1764960763&description=4x%20Perfume%20Bundle" className={style.item}>
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/pinterest.svg" alt="Pinterest" />
+                                    <span>Pin it</span>
                                 </a>
                             </div>
 
