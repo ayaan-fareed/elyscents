@@ -6,6 +6,7 @@ import style from './oud_colllection.module.scss'
 import Link from 'next/link'
 
 type IOudProductsType = {
+    id: number,
     name: string,
     orignal_price: number,
     dicounted_price: number,
@@ -21,6 +22,7 @@ const Oud_collection = () => {
     useEffect(() => {
         setOudProducts([
             {
+                id: 1,
                 name: 'OUD MAJESTY INSPIRED BY SHAMS',
                 orignal_price: 2000.00,
                 dicounted_price: 1899.00,
@@ -29,6 +31,7 @@ const Oud_collection = () => {
             },
 
             {
+                id: 2,
                 name: '3X PERFUME BUNDLE',
                 orignal_price: 2000.00,
                 dicounted_price: 1799.00,
@@ -37,6 +40,7 @@ const Oud_collection = () => {
             },
 
             {
+                id: 3,
                 name: 'DREAM OUD - INPIRED BY NOMAD',
                 orignal_price: 2000.00,
                 dicounted_price: 1699.00,
@@ -44,6 +48,7 @@ const Oud_collection = () => {
                 img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Dream-Oud.jpg?v=1760522968&width=540'
             },
             {
+                id: 4,
                 name: 'OUD VELVET - INPIRED BY SATIN',
                 orignal_price: 2000.00,
                 dicounted_price: 1799.00,
@@ -51,6 +56,7 @@ const Oud_collection = () => {
                 img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Velvet.jpg?v=1760522977&width=540'
             },
             {
+                id: 5,
                 name: 'ROYAL OUD',
                 orignal_price: 2100.00,
                 dicounted_price: 1799.00,
@@ -59,6 +65,7 @@ const Oud_collection = () => {
             },
 
             {
+                id: 6,
                 name: 'OUD EVERGREEN INPIRED BY WHITE OUD',
                 orignal_price: 2000.00,
                 dicounted_price: 1899.00,
@@ -66,6 +73,7 @@ const Oud_collection = () => {
                 img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Evergreen.jpg?v=1760523484&width=540'
             },
             {
+                id: 7,
                 name: 'RESHAM OUD _ INPIRED BY AMBER',
                 orignal_price: 2000.00,
                 dicounted_price: 1899.00,
@@ -73,6 +81,7 @@ const Oud_collection = () => {
                 img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Resham-Oud.jpg?v=1760523035&width=540'
             },
             {
+                id: 8,
                 name: 'CRYSTAL OUD _ INPIRED BY ONE MAN',
                 orignal_price: 2000.00,
                 dicounted_price: 1899.00,
@@ -89,15 +98,14 @@ const Oud_collection = () => {
     const CartItem = (value: IOudProductsType, index: number) => (
         <div className={style.carts_prnt} key={index}>
             <div className={style.cart_image}>
-                <img
-                    src={
-                        !isMobile && hoverIndex === index
-                            ? value.img_src2
-                            : value.img_src1
-                    }
-                    onMouseEnter={() => !isMobile && setHoverIndex(index)}
-                    onMouseLeave={() => !isMobile && setHoverIndex(null)}
-                    alt={value.name} />
+                <Link href={{
+                    pathname: "/productDetails",
+                    query: { id: value.id },
+                }}>
+                    <img src={!isMobile && hoverIndex === index ? value.img_src2 : value.img_src1}
+                        onMouseEnter={() => !isMobile && setHoverIndex(index)}
+                        onMouseLeave={() => !isMobile && setHoverIndex(null)} alt={value.name} />
+                </Link>
                 <div className={style.sale_tag}>
                     <p>Sale</p>
                 </div>
@@ -148,7 +156,7 @@ const Oud_collection = () => {
                     </Swiper>
                 )}
 
-                     <div className={style.view_btn}>
+                <div className={style.view_btn}>
                     <Link href="/oudCollection">
                         <button>VIEW ALL</button>
                     </Link>

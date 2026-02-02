@@ -166,6 +166,23 @@ const Product_detail = () => {
                                     </form>
                                 </div>
                             </div>
+                            
+                            <div className={style.social_share}>
+                                <a href="#" className={style.item}>
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook"/>
+                                        <span>Share</span>
+                                </a>
+
+                                <a href="#" className={style.item}>
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter"/>
+                                        <span>Tweet</span>
+                                </a>
+
+                                <a href="#" className={style.item}>
+                                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/pinterest.svg" alt="Pinterest"/>
+                                        <span>Pin it</span>
+                                </a>
+                            </div>
 
                         </div>
 

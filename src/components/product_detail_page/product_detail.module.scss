@@ -300,7 +300,7 @@
             transform: rotate(180deg);
         }
 
-        
+
         .form_wrapper {
             max-height: 0;
             overflow: hidden;
@@ -311,7 +311,7 @@
             max-height: 1000px;
         }
 
-       
+
         .user_detail_form {
             padding: 26px 24px 30px;
         }
@@ -371,6 +371,42 @@
         .captcha a {
             color: #000;
             text-decoration: underline;
+        }
+
+        .social_share {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+    }
+}
+
+@media (max-width: 480px) {
+    .social_share {
+        gap: 16px;
+    }
+
+    .item {
+        span {
+            font-size: 13px;
         }
 
     }

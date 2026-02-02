@@ -86,6 +86,7 @@ const Crazy_deal = () => {
   const [CrazyProducts, setCrazyProducts] = useState<ICrazyProductsType[]>([])
 
   useEffect(() => {
+    ``
     setCrazyProducts(data)
   }, [])
 
@@ -113,7 +114,7 @@ const Crazy_deal = () => {
       </div>
 
       <div className={style.pricing_sec}>
-        
+
         <h3>{value.name}</h3>
 
         <div className={style.rs_sec}>

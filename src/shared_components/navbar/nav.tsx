@@ -79,8 +79,24 @@ const Nav = () => {
             </li>
 
             <li className={style.nav_links}>
-              <Link href="/perfumes">ALL PERFUMES</Link>
+              <div className={style.dropdown}>
+
+                <Link href="/perfumes" className={style.dropdown_toggle}>
+                  ALL PERFUMES
+                </Link>
+
+                <ul className={style.dropdown_menu}>
+                  <li><Link href="/forHim">Men</Link></li>
+                  <li><Link href="/forHer">Women</Link></li>
+                  <li><Link href="/oudCollection">Unisex</Link></li>
+                  <li><Link href="/oudCollection">Oud Collection</Link></li>
+                  <li><Link href="/best_sellers">Best Seller Perfumes</Link></li>
+                  <li><Link href="/forHim">New Arrivals</Link></li>
+                  <li><Link href="/crazy_deals">Crazy Deals</Link></li>
+                </ul>
+              </div>
             </li>
+
 
             <li className={style.nav_links}>
               <Link href="/crazy_deals">CRAZY DEALS</Link>

@@ -6,6 +6,7 @@ import style from './for_him.module.scss'
 import Link from 'next/link'
 
 type IForHimType = {
+    id: number,
     name: string,
     orignal_price: number,
     dicounted_price: number,
@@ -20,6 +21,7 @@ const For_him = () => {
 
     const data = [
         {
+            id: 1,
             name: 'DREAM INPIRED BY JANNAN',
             orignal_price: 2000,
             dicounted_price: 1899.00,
@@ -28,6 +30,7 @@ const For_him = () => {
         },
 
         {
+            id: 2,
             name: 'FORMAL INPIRED BY OFFICE FOR MEN',
             orignal_price: 2000.00,
             dicounted_price: 1599.00,
@@ -36,6 +39,7 @@ const For_him = () => {
         },
 
         {
+            id: 3,
             name: 'FIERY TOBACCO - INSPIRED BY MANCERA',
             orignal_price: 2000.00,
             dicounted_price: 1699.00,
@@ -43,6 +47,7 @@ const For_him = () => {
             img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Fiery-Tobaco.jpg?v=1760523091&width=360'
         },
         {
+            id: 4,
             name: 'DARK RAVEN INPIRED BY BLACK OPIUM',
             orignal_price: 2000.00,
             dicounted_price: 1899.00,
@@ -50,6 +55,7 @@ const For_him = () => {
             img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Dark-Raven.jpg?v=1760522570&width=360'
         },
         {
+            id: 5,
             name: 'ROYAL OUD',
             orignal_price: 2000.00,
             dicounted_price: 1799.00,
@@ -58,6 +64,7 @@ const For_him = () => {
         },
 
         {
+            id: 6,
             name: 'SALSA SPIRIT - INSPIRED BY CREED AVENTUS',
             orignal_price: 2000.00,
             dicounted_price: 1899.00,
@@ -65,6 +72,7 @@ const For_him = () => {
             img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Salsa-Spirit.jpg?v=1760523136&width=720'
         },
         {
+            id: 7,
             name: 'ZARAK INSPIRED BY AZZARO WANTED',
             orignal_price: 2000.00,
             dicounted_price: 1899.00,
@@ -72,6 +80,7 @@ const For_him = () => {
             img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Zarak.jpg?v=1760522773&width=720'
         },
         {
+            id: 8,
             name: 'VELINA INSPIRED BY BURBURY WEEKEND',
             orignal_price: 2000.00,
             dicounted_price: 1699.00,
@@ -94,15 +103,14 @@ const For_him = () => {
     const CartItem = (value: IForHimType, index: number) => (
         <div className={style.carts_prnt} key={index}>
             <div className={style.cart_image}>
-                <img
-                    src={
-                        !isMobile && hoverIndex === index
-                            ? value.img_src2
-                            : value.img_src1
-                    }
-                    onMouseEnter={() => !isMobile && setHoverIndex(index)}
-                    onMouseLeave={() => !isMobile && setHoverIndex(null)}
-                    alt={value.name} />
+                <Link href={{
+                    pathname: "/productDetails",
+                    query: { id: value.id },
+                }}>
+                    <img src={!isMobile && hoverIndex === index ? value.img_src2 : value.img_src1}
+                        onMouseEnter={() => !isMobile && setHoverIndex(index)}
+                        onMouseLeave={() => !isMobile && setHoverIndex(null)} alt={value.name} />
+                </Link>
                 <div className={style.sale_tag}>
                     <p>Sale</p>
                 </div>
@@ -153,7 +161,7 @@ const For_him = () => {
                     </Swiper>
                 )}
 
-                    <div className={style.view_btn}>
+                <div className={style.view_btn}>
                     <Link href="/forHim">
                         <button>VIEW ALL</button>
                     </Link>
