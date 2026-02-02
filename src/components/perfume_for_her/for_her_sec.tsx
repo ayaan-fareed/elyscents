@@ -6,6 +6,7 @@ import style from './for_her_sec.module.scss'
 import Link from 'next/link'
 
 type IForHerType = {
+    id: number,
     name: string,
     orignal_price: number,
     dicounted_price: number,
@@ -15,8 +16,8 @@ type IForHerType = {
 
 
 const data = [
-
     {
+        id: 1,
         name: 'ROSE BLOSSOM - INSPIRED BY Gucci',
         orignal_price: 2000,
         dicounted_price: 1699.00,
@@ -25,6 +26,7 @@ const data = [
     },
 
     {
+        id: 2,
         name: 'Flora Fantasy - INSPIRED BY Jadore',
         orignal_price: 2000.00,
         dicounted_price: 1599.00,
@@ -33,6 +35,7 @@ const data = [
     },
 
     {
+        id: 3,
         name: 'Berry Grace Inspired By Burbury',
         orignal_price: 2000.00,
         dicounted_price: 1899.00,
@@ -40,6 +43,7 @@ const data = [
         img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Beryy-Grace.jpg?v=1760522656&width=360'
     },
     {
+        id: 4,
         name: 'Mystic Pulse - INSPIRED BY Gucci',
         orignal_price: 2000.00,
         dicounted_price: 1599.00,
@@ -47,6 +51,7 @@ const data = [
         img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Mystic-Pulse.jpg?v=1760523149&width=720'
     },
     {
+        id: 5,
         name: 'Rebel Bloom Inspired By Tommy',
         orignal_price: 2000.00,
         dicounted_price: 1899.00,
@@ -55,6 +60,7 @@ const data = [
     },
 
     {
+        id: 6,
         name: 'Floral Muse - INSPIRED BY Gucci',
         orignal_price: 2000.00,
         dicounted_price: 1699.00,
@@ -63,6 +69,7 @@ const data = [
 
     },
     {
+        id: 7,
         name: 'Empress Whif - INSPIRED BY Bombshell',
         orignal_price: 2000.00,
         dicounted_price: 1599.00,
@@ -70,6 +77,7 @@ const data = [
         img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Empress-Whiff.jpg?v=1760523195&width=720'
     },
     {
+        id: 8,
         name: 'Velina Inspired By Burbury Weekend',
         orignal_price: 2000.00,
         dicounted_price: 1899.00,
@@ -98,15 +106,14 @@ const For_her_sec = () => {
     const CartItem = (value: IForHerType, index: number) => (
         <div className={style.carts_prnt} key={index}>
             <div className={style.cart_image}>
-                <img
-                    src={
-                        !isMobile && hoverIndex === index
-                            ? value.img_src2
-                            : value.img_src1
-                    }
-                    onMouseEnter={() => !isMobile && setHoverIndex(index)}
-                    onMouseLeave={() => !isMobile && setHoverIndex(null)}
-                    alt={value.name} />
+                   <Link href={{
+          pathname: "/productDetails",
+          query: { id: value.id },
+        }}>
+          <img src={!isMobile && hoverIndex === index ? value.img_src2 : value.img_src1}
+            onMouseEnter={() => !isMobile && setHoverIndex(index)}
+            onMouseLeave={() => !isMobile && setHoverIndex(null)} alt={value.name} />
+        </Link>
                 <div className={style.sale_tag}>
                     <p>Sale</p>
                 </div>

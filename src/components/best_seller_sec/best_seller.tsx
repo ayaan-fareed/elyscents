@@ -6,6 +6,7 @@ import style from './best_seller.module.scss'
 import Link from 'next/link'
 
 type IproductsType = {
+    id: number,
     name: string,
     orignal_price: number,
     dicounted_price: number,
@@ -15,6 +16,7 @@ type IproductsType = {
 
 const data = [
     {
+        id: 1,
         name: 'ROYAL OUD',
         orignal_price: 2100.00,
         dicounted_price: 1799.00,
@@ -23,6 +25,7 @@ const data = [
     },
 
     {
+        id: 2,
         name: 'SALSA SPIRIT - INPIRED BY CREED',
         orignal_price: 2000.00,
         dicounted_price: 1899.00,
@@ -31,6 +34,7 @@ const data = [
     },
 
     {
+        id: 3,
         name: 'ZARAK INSPIRED BY AZZARO WANTED',
         orignal_price: 2000.00,
         dicounted_price: 1899.00,
@@ -38,6 +42,7 @@ const data = [
         img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Zarak.jpg?v=1760522773&width=540'
     },
     {
+        id: 4,
         name: 'EXOTIC PULSE',
         orignal_price: 2000.00,
         dicounted_price: 1799.00,
@@ -45,6 +50,7 @@ const data = [
         img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Exotic-Pulse.jpg?v=1760523043&width=720',
     },
     {
+        id: 5,
         name: 'WILD ESSENCE - INSPIRED BY DIOR',
         orignal_price: 2000.00,
         dicounted_price: 1899.00,
@@ -54,6 +60,7 @@ const data = [
     },
 
     {
+        id: 6,
         name: 'PEAK BREEZE - INSPIRED BY SILVER',
         orignal_price: 2000.00,
         dicounted_price: 1699.00,
@@ -61,6 +68,7 @@ const data = [
         img_src2: 'https://elyscents.pk/cdn/shop/files/ELyscents-Peak-Breeze.jpg?v=1760523055&width=720'
     },
     {
+        id: 7,
         name: 'APEX INSPIRED BY DUNHILL',
         orignal_price: 2000.00,
         dicounted_price: 1599.00,
@@ -68,6 +76,7 @@ const data = [
         img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Apex.jpg?v=1760523306&width=360'
     },
     {
+        id: 8,
         name: 'GREEN ELIXIR - INSPIRED BY ISSEY MIYAKE',
         orignal_price: 2000.00,
         dicounted_price: 1799.00,
@@ -99,15 +108,14 @@ const Best_seller = () => {
     const CartItem = (value: IproductsType, index: number) => (
         <div className={style.carts_prnt} key={index}>
             <div className={style.cart_image}>
-                <img
-                    src={
-                        !isMobile && hoverIndex === index
-                            ? value.img_src2
-                            : value.img_src1
-                    }
-                    onMouseEnter={() => !isMobile && setHoverIndex(index)}
-                    onMouseLeave={() => !isMobile && setHoverIndex(null)}
-                    alt={value.name} />
+                <Link href={{
+                    pathname: "/productDetails",
+                    query: { id: value.id },
+                }}>
+                    <img src={!isMobile && hoverIndex === index ? value.img_src2 : value.img_src1}
+                        onMouseEnter={() => !isMobile && setHoverIndex(index)}
+                        onMouseLeave={() => !isMobile && setHoverIndex(null)} alt={value.name} />
+                </Link>
                 <div className={style.sale_tag}>
                     <p>Sale</p>
                 </div>

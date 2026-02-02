@@ -113,6 +113,7 @@ const Crazy_deal = () => {
       </div>
 
       <div className={style.pricing_sec}>
+        
         <h3>{value.name}</h3>
 
         <div className={style.rs_sec}>
