@@ -112,8 +112,10 @@ const Crazy_deal = () => {
         </Link>
 
         <div className={style.sale_tag}>
+
           <p>Sale</p>
         </div>
+
       </div>
 
       <div className={style.pricing_sec}>
@@ -134,11 +136,13 @@ const Crazy_deal = () => {
         </span>
       </div>
       <div className={style.addtocart_btn}>
+
         <button className={style.cart_btn}>
           <Link href={`/order/${45}`}>
             Add to Cart
           </Link>
         </button>
+        
       </div>
     </div>
   );
