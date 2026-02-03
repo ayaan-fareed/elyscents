@@ -1,26 +1,41 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import style from './product_detail.module.scss'
 import { FaStar } from "react-icons/fa";
 import { CiGift } from "react-icons/ci";
 import { TbWorld } from "react-icons/tb";
 import { FaCircleDot, FaChevronUp } from "react-icons/fa6";
+import { usePathname } from "next/navigation";
+import { products } from '@/src/data/products';
 
+type props = {
+    id: string,
+}
 
-const Product_detail = () => {
+const Product_detail = ({ id }: props) => {
     const [open, setOpen] = useState(false)
     const [ayaan, setAyaan] = useState(false)
+    const [productData, setProductData] = useState<any>({})
 
+    useEffect(() => {
+        const foundProduct = products.find(
+            (item) => item.id === Number(id)
+        );
+
+        if (foundProduct) {
+            setProductData(foundProduct);
+        }
+    }, [id]);
 
     return (
         <>
             <div className={style.main_cont}>
                 <div className={style.conatiner}>
                     <div className={style.image_container}>
-                        <img src="https://elyscents.pk/cdn/shop/files/4_perfume_new_1.jpg?v=1764960763&width=1080" alt="img" className={style.mn_image} />
+                        <img src={productData.big_img} alt="img" className={style.mn_image} />
                     </div>
                     <div className={style.text_cont}>
-                        <h1>4X PERFUME BUNDLE</h1>
+                        <h1>{productData.name}</h1>
                         <div className={style.star_cont}>
                             <span className={style.star_icon}>
                                 <FaStar />
@@ -32,13 +47,14 @@ const Product_detail = () => {
                             <span>5 reviews</span>
                         </div>
                         <div className={style.pricing_sec}>
-                            <p className={style.orignal_price}>Rs.7,596.00</p>
-                            <p>Rs.5,599.00 </p>
-                            <span>Save Rs.1,997.00</span>
+                            <p className={style.orignal_price}>Rs.{productData.orignal_price}</p>
+                            <p>Rs.{productData.dicounted_price}</p>
+                            <span>Save {productData.orignal_price - productData.dicounted_price}</span>
                         </div>
                         <div className={style.free_deliver_sec}>
                             🛍️ <strong>Buy Any 2 Perfumes</strong> & <strong>FREE Delivery</strong> Get — Automatically Applied at Checkout.
                         </div>
+
 
                         <div className={style.shiping_details}>
                             <span><CiGift />FREE gift packing with every order</span>
