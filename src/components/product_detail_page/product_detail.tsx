@@ -55,7 +55,6 @@ const Product_detail = ({ id }: props) => {
                             🛍️ <strong>Buy Any 2 Perfumes</strong> & <strong>FREE Delivery</strong> Get — Automatically Applied at Checkout.
                         </div>
 
-
                         <div className={style.shiping_details}>
                             <span><CiGift />FREE gift packing with every order</span>
                             <span><TbWorld />14 Days easy return</span>
@@ -118,7 +117,6 @@ const Product_detail = ({ id }: props) => {
                         </div>
 
                         <div className={style.information_cont}>
-
                             <h2>Confidence, compliments & class — all in one bundle.</h2>
 
                             <div className={`${style.accordion_item} ${open ? style.active : ''}`}>
