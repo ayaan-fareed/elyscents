@@ -4,6 +4,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import style from './for_her_sec.module.scss'
 import Link from 'next/link'
+import { products, categories } from '@/src/data/products'
+import { Value } from 'sass'
 
 type IForHerType = {
     id: number,
@@ -14,77 +16,76 @@ type IForHerType = {
     img_src2: string
 }
 
+// const data = [
+//     {
+//         id: 1,
+//         name: 'ROSE BLOSSOM - INSPIRED BY Gucci',
+//         orignal_price: 2000,
+//         dicounted_price: 1699.00,
+//         img_src1: 'https://elyscents.pk/cdn/shop/files/rosy_Blossom.jpg?v=1760536616&width=1080',
+//         img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Rosy-Blossom.jpg?v=1760536616&width=720'
+//     },
 
-const data = [
-    {
-        id: 1,
-        name: 'ROSE BLOSSOM - INSPIRED BY Gucci',
-        orignal_price: 2000,
-        dicounted_price: 1699.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/rosy_Blossom.jpg?v=1760536616&width=1080',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Rosy-Blossom.jpg?v=1760536616&width=720'
-    },
+//     {
+//         id: 2,
+//         name: 'Flora Fantasy - INSPIRED BY Jadore',
+//         orignal_price: 2000.00,
+//         dicounted_price: 1599.00,
+//         img_src1: 'https://elyscents.pk/cdn/shop/files/Flora_Fantasy.jpg?v=1760523186&width=1080',
+//         img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Flora-Fantasy.jpg?v=1760523186&width=360',
+//     },
 
-    {
-        id: 2,
-        name: 'Flora Fantasy - INSPIRED BY Jadore',
-        orignal_price: 2000.00,
-        dicounted_price: 1599.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/Flora_Fantasy.jpg?v=1760523186&width=1080',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Flora-Fantasy.jpg?v=1760523186&width=360',
-    },
+//     {
+//         id: 3,
+//         name: 'Berry Grace Inspired By Burbury',
+//         orignal_price: 2000.00,
+//         dicounted_price: 1899.00,
+//         img_src1: 'https://elyscents.pk/cdn/shop/files/berry_grace.jpg?v=1760522656&width=1080',
+//         img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Beryy-Grace.jpg?v=1760522656&width=360'
+//     },
+//     {
+//         id: 4,
+//         name: 'Mystic Pulse - INSPIRED BY Gucci',
+//         orignal_price: 2000.00,
+//         dicounted_price: 1599.00,
+//         img_src1: 'https://elyscents.pk/cdn/shop/files/mystic_Pulse.jpg?v=1760523149&width=1080',
+//         img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Mystic-Pulse.jpg?v=1760523149&width=720'
+//     },
+//     {
+//         id: 5,
+//         name: 'Rebel Bloom Inspired By Tommy',
+//         orignal_price: 2000.00,
+//         dicounted_price: 1899.00,
+//         img_src1: 'https://elyscents.pk/cdn/shop/files/rebel_bloom.jpg?v=1760522809&width=1080',
+//         img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Rebel-Bloom.jpg?v=1760522809&width=360'
+//     },
 
-    {
-        id: 3,
-        name: 'Berry Grace Inspired By Burbury',
-        orignal_price: 2000.00,
-        dicounted_price: 1899.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/berry_grace.jpg?v=1760522656&width=1080',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Beryy-Grace.jpg?v=1760522656&width=360'
-    },
-    {
-        id: 4,
-        name: 'Mystic Pulse - INSPIRED BY Gucci',
-        orignal_price: 2000.00,
-        dicounted_price: 1599.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/mystic_Pulse.jpg?v=1760523149&width=1080',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Mystic-Pulse.jpg?v=1760523149&width=720'
-    },
-    {
-        id: 5,
-        name: 'Rebel Bloom Inspired By Tommy',
-        orignal_price: 2000.00,
-        dicounted_price: 1899.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/rebel_bloom.jpg?v=1760522809&width=1080',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Rebel-Bloom.jpg?v=1760522809&width=360'
-    },
+//     {
+//         id: 6,
+//         name: 'Floral Muse - INSPIRED BY Gucci',
+//         orignal_price: 2000.00,
+//         dicounted_price: 1699.00,
+//         img_src1: 'https://elyscents.pk/cdn/shop/files/Floral_Muse.jpg?v=1760523165&width=1080',
+//         img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Floral-Muse.jpg?v=1760523165&width=360'
 
-    {
-        id: 6,
-        name: 'Floral Muse - INSPIRED BY Gucci',
-        orignal_price: 2000.00,
-        dicounted_price: 1699.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/Floral_Muse.jpg?v=1760523165&width=1080',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Floral-Muse.jpg?v=1760523165&width=360'
-
-    },
-    {
-        id: 7,
-        name: 'Empress Whif - INSPIRED BY Bombshell',
-        orignal_price: 2000.00,
-        dicounted_price: 1599.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/Empress_whiff.jpg?v=1760523195&width=1080',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Empress-Whiff.jpg?v=1760523195&width=720'
-    },
-    {
-        id: 8,
-        name: 'Velina Inspired By Burbury Weekend',
-        orignal_price: 2000.00,
-        dicounted_price: 1899.00,
-        img_src1: 'https://elyscents.pk/cdn/shop/files/velina_2323b953-0e39-4cdb-899e-bd1faeb68d9d.jpg?v=1760522545&width=1080',
-        img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscent-Velina.jpg?v=1760522545&width=360'
-    },
-]
+//     },
+//     {
+//         id: 7,
+//         name: 'Empress Whif - INSPIRED BY Bombshell',
+//         orignal_price: 2000.00,
+//         dicounted_price: 1599.00,
+//         img_src1: 'https://elyscents.pk/cdn/shop/files/Empress_whiff.jpg?v=1760523195&width=1080',
+//         img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Empress-Whiff.jpg?v=1760523195&width=720'
+//     },
+//     {
+//         id: 8,
+//         name: 'Velina Inspired By Burbury Weekend',
+//         orignal_price: 2000.00,
+//         dicounted_price: 1899.00,
+//         img_src1: 'https://elyscents.pk/cdn/shop/files/velina_2323b953-0e39-4cdb-899e-bd1faeb68d9d.jpg?v=1760522545&width=1080',
+//         img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscent-Velina.jpg?v=1760522545&width=360'
+//     },
+// ]
 
 const For_her_sec = () => {
     const [hoverIndex, setHoverIndex] = useState<any>(null)
@@ -92,10 +93,8 @@ const For_her_sec = () => {
     const [ForHer, setForHer] = useState<IForHerType[]>([])
 
     useEffect(() => {
-        const sortedByAlpha = [...data].sort(
-            (a, b) => a.name.localeCompare(b.name)
-        )
-        setForHer(sortedByAlpha)
+        let herProducts = products.filter((value) => value.category == 3)
+        setForHer(herProducts)
     }, [])
 
 
@@ -106,14 +105,13 @@ const For_her_sec = () => {
     const CartItem = (value: IForHerType, index: number) => (
         <div className={style.carts_prnt} key={index}>
             <div className={style.cart_image}>
-                   <Link href={{
-          pathname: "/productDetails",
-          query: { id: value.id },
-        }}>
-          <img src={!isMobile && hoverIndex === index ? value.img_src2 : value.img_src1}
-            onMouseEnter={() => !isMobile && setHoverIndex(index)}
-            onMouseLeave={() => !isMobile && setHoverIndex(null)} alt={value.name} />
-        </Link>
+
+                <Link href={`/productDetails/${value.id}`}>
+                    <img src={!isMobile && hoverIndex === index ? value.img_src2 : value.img_src1}
+                        onMouseEnter={() => !isMobile && setHoverIndex(index)}
+                        onMouseLeave={() => !isMobile && setHoverIndex(null)} alt={value.name} />
+                </Link>
+
                 <div className={style.sale_tag}>
                     <p>Sale</p>
                 </div>
@@ -137,7 +135,11 @@ const For_her_sec = () => {
             </div>
 
             <div className={style.addtocart_btn}>
-                <button className={style.cart_btn}>Add to Cart</button>
+                <button className={style.cart_btn}>
+                    <Link href={`/productDetails/${value.id}`}>
+                        Add to Cart
+                    </Link>
+                </button>
             </div>
         </div>
     )

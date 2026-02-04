@@ -80,15 +80,19 @@ type ICrazyProductsType = {
   dicounted_price: number,
   img_src1: string,
   img_src2: string,
+  big_img: string,
+  category: number,
 }
+
 const Crazy_deal = () => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null)
   const [isMobile, setIsMobile] = useState(false)
   const [CrazyProducts, setCrazyProducts] = useState<ICrazyProductsType[]>([])
 
   useEffect(() => {
-    ``
-    setCrazyProducts(products)
+    let _products = products.filter((value) => value.category == 1)
+
+    setCrazyProducts(_products)
   }, [])
 
   useEffect(() => {
@@ -99,23 +103,14 @@ const Crazy_deal = () => {
 
     <div className={style.carts_prnt} key={index}>
       <div className={style.cart_image}>
-
-        {/* <Link href={{
-          pathname: "/productDetails",
-          query: { id: value.id },
-        }}> */}
-
         <Link href={`/productDetails/${value.id}`}>
           <img src={!isMobile && hoverIndex === index ? value.img_src2 : value.img_src1}
             onMouseEnter={() => !isMobile && setHoverIndex(index)}
             onMouseLeave={() => !isMobile && setHoverIndex(null)} alt={value.name} />
         </Link>
-
         <div className={style.sale_tag}>
-
           <p>Sale</p>
         </div>
-
       </div>
 
       <div className={style.pricing_sec}>
@@ -138,7 +133,7 @@ const Crazy_deal = () => {
       <div className={style.addtocart_btn}>
 
         <button className={style.cart_btn}>
-          <Link href={`/order/${45}`}>
+          <Link href={`/productDetails/${value.id}`}>
             Add to Cart
           </Link>
         </button>
