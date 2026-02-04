@@ -142,7 +142,7 @@ const Crazy_deal = () => {
             Add to Cart
           </Link>
         </button>
-        
+
       </div>
     </div>
   );
