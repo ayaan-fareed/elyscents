@@ -10,7 +10,7 @@ import { products } from '@/src/data/products';
 import { red } from '@mui/material/colors';
 
 type props = {
-    id: number,
+    id: string,
 }
 
 const Product_detail = ({ id }: props) => {
