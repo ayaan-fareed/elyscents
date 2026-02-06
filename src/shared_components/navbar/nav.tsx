@@ -185,7 +185,7 @@ const Nav = () => {
           <h2>CART</h2>
           
           <IoClose
-            className={style.close_icon}
+            className={style.close_icon2}
             onClick={() => toggleCartDrawer(false)}
           />
         </div>

@@ -102,6 +102,9 @@
 }
 
 .close_icon {
+     display: flex;
+    justify-content: flex-end;
+    padding: 17px;
     color: rgb(92, 92, 92);
 }
 
