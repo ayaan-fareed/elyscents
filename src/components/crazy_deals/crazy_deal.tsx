@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import style from './crazy_deal.module.scss'
 import Link from 'next/link'
-import { products, categories } from '@/src/data/products';
+import { products , categories} from '@/src/data/products';
 
 // const data = [
 //   {
@@ -82,6 +82,9 @@ type ICrazyProductsType = {
   img_src2: string,
   big_img: string,
   category: number,
+  rating: number,
+  reviews: number,
+
 }
 
 const Crazy_deal = () => {

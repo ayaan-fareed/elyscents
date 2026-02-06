@@ -7,15 +7,17 @@ import { TbWorld } from "react-icons/tb";
 import { FaCircleDot, FaChevronUp } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { products } from '@/src/data/products';
+import { red } from '@mui/material/colors';
 
 type props = {
-    id: string,
+    id: number,
 }
 
 const Product_detail = ({ id }: props) => {
     const [open, setOpen] = useState(false)
     const [ayaan, setAyaan] = useState(false)
     const [productData, setProductData] = useState<any>({})
+    const star = ["", "", "", "", ""]
 
     useEffect(() => {
         const foundProduct = products.find(
@@ -38,13 +40,12 @@ const Product_detail = ({ id }: props) => {
                         <h1>{productData.name}</h1>
                         <div className={style.star_cont}>
                             <span className={style.star_icon}>
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
-                                <FaStar />
+                                {star.map((value, index) => (
+                                    <FaStar style={{ color: productData.rating > index ? 'yellow' : "grey" }} />
+                                ))}
+
                             </span>
-                            <span>5 reviews</span>
+                            <span>{productData.reviews} reviews</span>
                         </div>
                         <div className={style.pricing_sec}>
                             <p className={style.orignal_price}>Rs.{productData.orignal_price}</p>
@@ -180,6 +181,7 @@ const Product_detail = ({ id }: props) => {
                                     </form>
                                 </div>
                             </div>
+
 
                             <div className={style.social_share}>
                                 <a href="https://www.facebook.com/sharer.php?u=https://elyscents.pk/products/4x-perfume-bundle" className={style.item}>
