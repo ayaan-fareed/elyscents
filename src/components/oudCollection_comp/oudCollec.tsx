@@ -3,108 +3,105 @@ import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import style from './oudCollec.module.scss'
+import { products } from '@/src/data/products'
+import Link from 'next/link'
 
-type IproductsType = {
+type IbestProductsType = {
     name: string,
     orignal_price: number,
     dicounted_price: number,
     img_src1: string,
     img_src2: string,
+    id: number,
 }
 
-const data = [
+// const data = [
 
-            {
-                name: 'OUD MAJESTY INSPIRED BY SHAMS',
-                orignal_price: 2000.00,
-                dicounted_price: 1899.00,
-                img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_majesty.jpg?v=1760523188&width=1080',
-                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Majesty.jpg?v=1760523200&width=540'
-            },
+//             {
+//                 name: 'OUD MAJESTY INSPIRED BY SHAMS',
+//                 orignal_price: 2000.00,
+//                 dicounted_price: 1899.00,
+//                 img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_majesty.jpg?v=1760523188&width=1080',
+//                 img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Majesty.jpg?v=1760523200&width=540'
+//             },
 
-            {
-                name: '3X PERFUME BUNDLE',
-                orignal_price: 2000.00,
-                dicounted_price: 1799.00,
-                img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_Essence.jpg?v=1760523123&width=1080',
-                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Esscense.jpg?v=1760523123&width=540',
-            },
+//             {
+//                 name: '3X PERFUME BUNDLE',
+//                 orignal_price: 2000.00,
+//                 dicounted_price: 1799.00,
+//                 img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_Essence.jpg?v=1760523123&width=1080',
+//                 img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Esscense.jpg?v=1760523123&width=540',
+//             },
 
-            {
-                name: 'DREAM OUD - INPIRED BY NOMAD',
-                orignal_price: 2000.00,
-                dicounted_price: 1699.00,
-                img_src1: 'https://elyscents.pk/cdn/shop/files/Dream_Oud.jpg?v=1760522968&width=1080',
-                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Dream-Oud.jpg?v=1760522968&width=540'
-            },
-            {
-                name: 'OUD VELVET - INPIRED BY SATIN',
-                orignal_price: 2000.00,
-                dicounted_price: 1799.00,
-                img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_Velvet.jpg?v=1760522977&width=1080',
-                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Velvet.jpg?v=1760522977&width=540'
-            },
-            {
-                name: 'ROYAL OUD',
-                orignal_price: 2100.00,
-                dicounted_price: 1799.00,
-                img_src1: 'https://elyscents.pk/cdn/shop/files/Royal_Oud_32df109e-c80d-4239-8c63-9f9a5a3ac58b.jpg?v=1760522995&width=1080',
-                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Royal-Oud.jpg?v=1760522995&width=540'
-            },
+//             {
+//                 name: 'DREAM OUD - INPIRED BY NOMAD',
+//                 orignal_price: 2000.00,
+//                 dicounted_price: 1699.00,
+//                 img_src1: 'https://elyscents.pk/cdn/shop/files/Dream_Oud.jpg?v=1760522968&width=1080',
+//                 img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Dream-Oud.jpg?v=1760522968&width=540'
+//             },
+//             {
+//                 name: 'OUD VELVET - INPIRED BY SATIN',
+//                 orignal_price: 2000.00,
+//                 dicounted_price: 1799.00,
+//                 img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_Velvet.jpg?v=1760522977&width=1080',
+//                 img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Velvet.jpg?v=1760522977&width=540'
+//             },
+//             {
+//                 name: 'ROYAL OUD',
+//                 orignal_price: 2100.00,
+//                 dicounted_price: 1799.00,
+//                 img_src1: 'https://elyscents.pk/cdn/shop/files/Royal_Oud_32df109e-c80d-4239-8c63-9f9a5a3ac58b.jpg?v=1760522995&width=1080',
+//                 img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Royal-Oud.jpg?v=1760522995&width=540'
+//             },
 
-            {
-                name: 'OUD EVERGREEN INPIRED BY WHITE OUD',
-                orignal_price: 2000.00,
-                dicounted_price: 1899.00,
-                img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_EverGreen.jpg?v=1760523484&width=1080',
-                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Evergreen.jpg?v=1760523484&width=540'
-            },
-            {
-                name: 'RESHAM OUD _ INPIRED BY AMBER',
-                orignal_price: 2000.00,
-                dicounted_price: 1899.00,
-                img_src1: 'https://elyscents.pk/cdn/shop/files/resham_oud.jpg?v=1760523035&width=1080',
-                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Resham-Oud.jpg?v=1760523035&width=540'
-            },
-            {
-                name: 'CRYSTAL OUD _ INPIRED BY ONE MAN',
-                orignal_price: 2000.00,
-                dicounted_price: 1899.00,
-                img_src1: 'https://elyscents.pk/cdn/shop/files/Crystal_Oud.jpg?v=1760523084&width=1080',
-                img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Crystal-Oud.jpg?v=1760523084&width=540'
-            },
-        ]
+//             {
+//                 name: 'OUD EVERGREEN INPIRED BY WHITE OUD',
+//                 orignal_price: 2000.00,
+//                 dicounted_price: 1899.00,
+//                 img_src1: 'https://elyscents.pk/cdn/shop/files/Oud_EverGreen.jpg?v=1760523484&width=1080',
+//                 img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Oud-Evergreen.jpg?v=1760523484&width=540'
+//             },
+//             {
+//                 name: 'RESHAM OUD _ INPIRED BY AMBER',
+//                 orignal_price: 2000.00,
+//                 dicounted_price: 1899.00,
+//                 img_src1: 'https://elyscents.pk/cdn/shop/files/resham_oud.jpg?v=1760523035&width=1080',
+//                 img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Resham-Oud.jpg?v=1760523035&width=540'
+//             },
+//             {
+//                 name: 'CRYSTAL OUD _ INPIRED BY ONE MAN',
+//                 orignal_price: 2000.00,
+//                 dicounted_price: 1899.00,
+//                 img_src1: 'https://elyscents.pk/cdn/shop/files/Crystal_Oud.jpg?v=1760523084&width=1080',
+//                 img_src2: 'https://elyscents.pk/cdn/shop/files/Elyscents-Crystal-Oud.jpg?v=1760523084&width=540'
+//             },
+//         ]
 
 const oudCollec = () => {
     const [hoverIndex, setHoverIndex] = useState<any>(null)
     const [isMobile, setIsMobile] = useState(false)
-    const [products, setProducts] = useState<IproductsType[]>([])
+    const [bestProducts, setbestProducts] = useState<IbestProductsType[]>([])
 
     useEffect(() => {
         setIsMobile(window.innerWidth <= 768)
     }, [])
 
     useEffect(() => {
-        // const sortedByReverseAlpha = [...data].sort(
-        //     (a, b) => b.name.localeCompare(a.name)
-        // )
-        setProducts(data)
+        let bstSellers = products.filter((value) => value.category == 5)
+        setbestProducts(bstSellers)
     }, [])
 
 
 
-    const CartItem = (value: IproductsType, index: number) => (
+    const CartItem = (value: IbestProductsType, index: number) => (
         <div className={style.carts_prnt} key={index}>
             <div className={style.cart_image}>
-                <img
-                    src={
-                        !isMobile && hoverIndex === index
-                            ? value.img_src2
-                            : value.img_src1
-                    }
-                    onMouseEnter={() => !isMobile && setHoverIndex(index)}
-                    onMouseLeave={() => !isMobile && setHoverIndex(null)}
-                    alt={value.name} />
+                <Link href={`/productDetails/${value.id}`}>
+                    <img src={!isMobile && hoverIndex === index ? value.img_src2 : value.img_src1}
+                        onMouseEnter={() => !isMobile && setHoverIndex(index)}
+                        onMouseLeave={() => !isMobile && setHoverIndex(null)} alt={value.name} />
+                </Link>
                 <div className={style.sale_tag}>
                     <p>Sale</p>
                 </div>
@@ -128,39 +125,43 @@ const oudCollec = () => {
             </div>
 
             <div className={style.addtocart_btn}>
-                <button className={style.cart_btn}>Add to Cart</button>
+                <button className={style.cart_btn}>
+                    <Link href={`/productDetails/${value.id}`}>
+                        Add to Cart
+                    </Link>
+                </button>
             </div>
         </div>
     );
 
-        const filterFunction = (type: string) => {
+    const filterFunction = (type: string) => {
         if (type === "A-Z") {
-            const sortedByAlpha = [...data].sort(
+            const sortedByAlpha = [...bestProducts].sort(
                 (a, b) => a.name.localeCompare(b.name)
             )
-            setProducts(sortedByAlpha)
+            setbestProducts(sortedByAlpha)
         }
 
         else if (type === "Z-A") {
-            const sortByReverseAlpha = [...data].sort(
+            const sortByReverseAlpha = [...bestProducts].sort(
                 (a, b) => b.name.localeCompare(a.name)
             )
-            setProducts(sortByReverseAlpha)
+            setbestProducts(sortByReverseAlpha)
         }
         else if (type === "HighestPrice") {
-            const sortHigherPrice = [...data].sort(
+            const sortHigherPrice = [...bestProducts].sort(
                 (a, b) => b.dicounted_price - a.dicounted_price
             )
-            setProducts(sortHigherPrice)
+            setbestProducts(sortHigherPrice)
         }
         else if (type === "LowerPrice") {
-            const sortByLowestPrice = [...data].sort(
+            const sortByLowestPrice = [...bestProducts].sort(
                 (a, b) => a.dicounted_price - b.dicounted_price
             )
-            setProducts(sortByLowestPrice)
+            setbestProducts(sortByLowestPrice)
         }
         else {
-            setProducts(data)
+            setbestProducts(bestProducts)
         }
     }
 
@@ -175,7 +176,7 @@ const oudCollec = () => {
                 <div className={style.main_container}>
                     <div className={style.filter_sec}>
                         <div>
-                            <p className={style.array_products}> {data.length} products</p>
+                            <p className={style.array_products}> {bestProducts.length} products</p>
                         </div>
                         <div className={style.select_wrapper}>
                             <select onChange={(e) => filterFunction(e.target.value)}>
@@ -191,13 +192,13 @@ const oudCollec = () => {
 
                 {!isMobile ? (
                     <div className={style.crazydeal_parnt}>
-                        {products.map((value, index) =>
+                        {bestProducts.map((value, index) =>
                             CartItem(value, index)
                         )}
                     </div>
                 ) : (
                     <Swiper slidesPerView={1.2} spaceBetween={15}>
-                        {products.map((value, index) => (
+                        {bestProducts.map((value, index) => (
                             <SwiperSlide key={index}>
                                 {CartItem(value, index)}
                             </SwiperSlide>

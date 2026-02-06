@@ -176,21 +176,60 @@ const Nav = () => {
           sx: {
             backgroundColor: '#fff',
             color: '#000',
-            width: 350,
+            width: { xs: '100%', sm: 380 },
           }
-        }}>
-
-        <div className={style.close_icon}>
+        }}
+      >
+        {/* Header */}
+        <div className={style.cart_header}>
+          <h2>CART</h2>
+          
           <IoClose
-            className={style.close_icon_mn}
-            onClick={() => toggleCartDrawer(false)} />
+            className={style.close_icon}
+            onClick={() => toggleCartDrawer(false)}
+          />
         </div>
 
-        <div className={style.cart_drawer}>
-          <h2>CART</h2>
-          <p>Your cart is currently empty.</p>
+
+        <div className={style.cart_item}>
+          <img
+            src="https://elyscents.pk/cdn/shop/files/berry_grace.jpg?v=1760522656&width=540"
+            alt="product"
+            className={style.product_img}
+          />
+
+          <div className={style.product_details}>
+            <h4>Berry Grace Inspired By Burbury Her</h4>
+            <p><strong>Size:</strong> 50 ML</p>
+
+            <div className={style.qty_price}>
+              <div className={style.qty_box}>
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+              </div>
+              <span className={style.price}>Rs.1,899.00</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className={style.cart_footer}>
+          <div className={style.subtotal}>
+            <span>SUBTOTAL</span>
+            <span>Rs.1,899.00</span>
+          </div>
+
+          <p className={style.note}>
+            Shipping, taxes, and discount codes calculated at checkout.
+          </p>
+
+          <button className={style.checkout_btn}>
+            CHECK OUT
+          </button>
         </div>
       </SwipeableDrawer>
+
     </>
   )
 }
