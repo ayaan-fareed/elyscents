@@ -28,9 +28,11 @@ const Nav = () => {
   ];
 
   const [cartOpen, setCartOpen] = React.useState(false);
+
   const toggleCartDrawer = (value: boolean) => {
     setCartOpen(value);
   };
+  
   return (
     <>
       <div className={style.shipping}>
@@ -96,7 +98,6 @@ const Nav = () => {
                 </ul>
               </div>
             </li>
-
 
             <li className={style.nav_links}>
               <Link href="/crazy_deals">CRAZY DEALS</Link>
@@ -178,12 +179,11 @@ const Nav = () => {
             color: '#000',
             width: { xs: '80%', sm: 380 },
           }
-        }}
-      >
-        {/* Header */}
+        }}>
+
         <div className={style.cart_header}>
           <h2>CART</h2>
-          
+
           <IoClose
             className={style.close_icon2}
             onClick={() => toggleCartDrawer(false)}
@@ -213,7 +213,6 @@ const Nav = () => {
           </div>
         </div>
 
-        {/* Footer */}
         <div className={style.cart_footer}>
           <div className={style.subtotal}>
             <span>SUBTOTAL</span>

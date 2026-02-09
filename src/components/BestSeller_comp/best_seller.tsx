@@ -94,8 +94,6 @@ const Best_seller = () => {
         setbestProducts(bstSellers)
     }, [])
 
-
-
     const CartItem = (value: IbestProductsType, index: number) => (
         <div className={style.carts_prnt} key={index}>
             <div className={style.cart_image}>
