@@ -334,7 +334,6 @@ const AllPerfumes = () => {
                                 <SwiperSlide key={index}>
                                     {CartItem(value, index)}
                                 </SwiperSlide>
-
                             ))}
                         </Swiper>
                     )}
