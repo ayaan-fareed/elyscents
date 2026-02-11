@@ -290,7 +290,6 @@ const AllPerfumes = () => {
                 <div className={style.image_cont}>
                     <img src="https://elyscents.pk/cdn/shop/files/elyscents-banner.jpg?v=1716647770&width=1920" alt="img" className={style.mn_image} />
                 </div>
-
                 <div className={style.prnt_div}>
                     <div className={style.image_container} >
 
@@ -339,7 +338,6 @@ const AllPerfumes = () => {
                     )}
                 </div>
             </div>
-
         </>
     )
 }

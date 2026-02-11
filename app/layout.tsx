@@ -31,7 +31,6 @@ export default function RootLayout({
   const hideNavbar = pathname === "/login" || pathname === "/sinup"
   return (
     <html lang="en">
-      
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {!hideNavbar && <Nav />}
         {children}

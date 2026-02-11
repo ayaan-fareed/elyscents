@@ -9,7 +9,6 @@ import { FaInstagram, FaFacebookF, FaYoutube, FaTiktok } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import Link from 'next/link';
 import { useRouter } from "next/navigation";
-
 import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 
@@ -69,7 +68,6 @@ const Nav = () => {
             <div className={style.nav_right} onClick={() => toggleCartDrawer(true)} >
               <IoBagOutline />
             </div>
-
           </div>
         </div>
 
